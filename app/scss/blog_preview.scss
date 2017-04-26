@@ -1,5 +1,5 @@
 .blog-preview {
-  @extend .bb, .b--light-gray, .pa4, .pv3;
+  @extend .bb, .b--light-gray, .pa4, .pv3, .pointer;
 
   .blog-title { @extend .f2, .title-font, .pb2, .b; }
   .blog-content { @extend .font, .pb2; }

@@ -15,10 +15,7 @@ export default function Login({ api }) {
     m.route.set('/home');
   };
 
-  const register = () => {
-    // TODO: api.register
-    m.route.set('/register');
-  };
+  const register = () => m.route.set('/register');
 
   const loginDialog = () => m('.login-dialog', [
     m('.title', 'Sign In'),

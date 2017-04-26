@@ -3,7 +3,8 @@
   height: 75px;
   
   .home-btn-container button, 
-  .logout-btn-container button {
+  .logout-btn-container button,
+  .new-btn-container button {
     @extend .action-btn, .white, .ph2;
   }
 }

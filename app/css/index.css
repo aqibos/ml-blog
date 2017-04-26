@@ -251,7 +251,8 @@ img {
   outline: 0; }
 
 .ba, .login .login-dialog .username-input-container input,
-.login .login-dialog .password-input-container input {
+.login .login-dialog .password-input-container input, .register .register-dialog .username-input-container input,
+.register .register-dialog .password-input-container input, .comment {
   border-style: solid;
   border-width: 1px; }
 
@@ -263,7 +264,7 @@ img {
   border-right-style: solid;
   border-right-width: 1px; }
 
-.bb, .blog-preview, .blog .page-view .blog-full, .comment {
+.bb, .blog-preview, .blog .page-view .blog-full {
   border-bottom-style: solid;
   border-bottom-width: 1px; }
 
@@ -272,7 +273,8 @@ img {
   border-left-width: 1px; }
 
 .bn, .clear-btn, .action-btn, .nav .home-btn-container button,
-.nav .logout-btn-container button, .login .login-dialog .login-btn-container button {
+.nav .logout-btn-container button,
+.nav .new-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button {
   border-style: none;
   border-width: 0; }
 
@@ -288,7 +290,7 @@ img {
 .b--mid-gray {
   border-color: #555; }
 
-.b--gray, .comment {
+.b--gray {
   border-color: #777; }
 
 .b--silver {
@@ -300,7 +302,7 @@ img {
 .b--moon-gray {
   border-color: #ccc; }
 
-.b--light-gray, .blog-preview {
+.b--light-gray, .blog-preview, .comment {
   border-color: #eee; }
 
 .b--near-white {
@@ -684,7 +686,7 @@ img {
   table-layout: fixed;
   width: 100%; }
 
-.flex, .nav, .login, .login .login-dialog, .home .page-view, .home .blog-list, .blog .page-view, .blog .page-view .blog-comment-list {
+.flex, .nav, .login, .login .login-dialog, .register, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view, .blog .page-view .blog-comment-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
@@ -706,12 +708,12 @@ img {
   -ms-flex: none;
   flex: none; }
 
-.flex-column, .login .login-dialog, .home .page-view, .home .blog-list, .blog .page-view, .blog .page-view .blog-comment-list {
+.flex-column, .login .login-dialog, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .blog .page-view, .blog .page-view .blog-comment-list {
   -webkit-box-orient: vertical;
   -ms-flex-direction: column;
   flex-direction: column; }
 
-.flex-column, .login .login-dialog, .home .page-view, .home .blog-list, .blog .page-view, .blog .page-view .blog-comment-list, .flex-row {
+.flex-column, .login .login-dialog, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .blog .page-view, .blog .page-view .blog-comment-list, .flex-row {
   -webkit-box-direction: normal; }
 
 .flex-row {
@@ -733,7 +735,7 @@ img {
   -ms-flex-align: end;
   align-items: flex-end; }
 
-.items-center, .nav, .login, .login .login-dialog, .home .page-view, .home .blog-list, .blog .page-view, .blog .page-view .blog-comment-list {
+.items-center, .nav, .login, .login .login-dialog, .register, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .blog .page-view, .blog .page-view .blog-comment-list {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
@@ -780,7 +782,7 @@ img {
   -ms-flex-pack: end;
   justify-content: flex-end; }
 
-.justify-center, .login, .home .blog-list {
+.justify-center, .login, .register, .home .blog-list, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
@@ -934,7 +936,7 @@ img {
 .normal {
   font-weight: 400; }
 
-.b, .home .title, .blog-preview .blog-title, .blog .page-view .blog-full .blog-title, .blog .page-view .comment-title {
+.b, .home .title, .blog-preview .blog-title, .new-blog .page-view .title, .blog .page-view .blog-full .blog-title, .blog .page-view .comment-title {
   font-weight: 700; }
 
 .fw1 {
@@ -1136,14 +1138,16 @@ img {
   width: 75%; }
 
 .w-80, .login .login-dialog .username-input-container,
-.login .login-dialog .password-input-container, .login .login-dialog .login-btn-container {
+.login .login-dialog .password-input-container, .login .login-dialog .login-btn-container, .register .register-dialog .username-input-container,
+.register .register-dialog .password-input-container, .register .register-dialog .register-btn-container {
   width: 80%; }
 
-.w-90, .home .blog-list, .blog .page-view .blog-full, .blog .page-view .blog-comment-list {
+.w-90, .home .blog-list, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view .blog-full, .blog .page-view .blog-comment-list {
   width: 90%; }
 
 .w-100, .login .login-dialog .username-input-container input,
-.login .login-dialog .password-input-container input, .login .login-dialog .login-btn-container button, .blog .page-view .blog-full .blog-content {
+.login .login-dialog .password-input-container input, .login .login-dialog .login-btn-container button, .register .register-dialog .username-input-container input,
+.register .register-dialog .password-input-container input, .register .register-dialog .register-btn-container button, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .blog-full .blog-content {
   width: 100%; }
 
 .w-third {
@@ -1358,7 +1362,8 @@ img {
   color: #f4f4f4; }
 
 .white, .nav .home-btn-container button,
-.nav .logout-btn-container button {
+.nav .logout-btn-container button,
+.nav .new-btn-container button, .new-blog .page-view .new-blog-btn-container button {
   color: #fff; }
 
 .dark-red {
@@ -1523,11 +1528,12 @@ img {
 .bg-near-white {
   background-color: #f4f4f4; }
 
-.bg-white, .login .login-dialog {
+.bg-white, .login .login-dialog, .register .register-dialog {
   background-color: #fff; }
 
 .bg-transparent, .clear-btn, .action-btn, .nav .home-btn-container button,
-.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .link {
+.nav .logout-btn-container button,
+.nav .new-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .link {
   background-color: transparent; }
 
 .bg-dark-red {
@@ -1939,8 +1945,10 @@ img {
   padding: .25rem; }
 
 .pa2, .action-btn, .nav .home-btn-container button,
-.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .login .login-dialog .title, .login .login-dialog .username-input-container input,
-.login .login-dialog .password-input-container input, .login .login-dialog .login-btn-container, .comment, .comment .comment-meta {
+.nav .logout-btn-container button,
+.nav .new-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .login .login-dialog .title, .login .login-dialog .username-input-container input,
+.login .login-dialog .password-input-container input, .login .login-dialog .login-btn-container, .register .register-dialog .title, .register .register-dialog .username-input-container input,
+.register .register-dialog .password-input-container input, .register .register-dialog .register-btn-container, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .comment, .comment .comment-meta {
   padding: .5rem; }
 
 .pa3 {
@@ -2070,7 +2078,7 @@ img {
   padding-top: 1rem;
   padding-bottom: 1rem; }
 
-.pv4, .login .login-dialog .title, .blog .page-view .blog-full .blog-content {
+.pv4, .login .login-dialog .title, .register .register-dialog .title, .blog .page-view .blog-full .blog-content {
   padding-top: 2rem;
   padding-bottom: 2rem; }
 
@@ -2095,7 +2103,8 @@ img {
   padding-right: .25rem; }
 
 .ph2, .nav .home-btn-container button,
-.nav .logout-btn-container button {
+.nav .logout-btn-container button,
+.nav .new-btn-container button {
   padding-left: .5rem;
   padding-right: .5rem; }
 
@@ -2131,7 +2140,7 @@ img {
 .ma3 {
   margin: 1rem; }
 
-.ma4, .home .title {
+.ma4, .home .title, .new-blog .page-view .title {
   margin: 2rem; }
 
 .ma5 {
@@ -2445,7 +2454,7 @@ img {
 .tr {
   text-align: right; }
 
-.tc, .login .login-dialog .title, .home .title, .blog .page-view .blog-full .blog-title, .blog .page-view .blog-full .blog-meta {
+.tc, .login .login-dialog .title, .register .register-dialog .title, .home .title, .new-blog .page-view .title, .blog .page-view .blog-full .blog-title, .blog .page-view .blog-full .blog-meta {
   text-align: center; }
 
 .ttc {
@@ -2466,10 +2475,10 @@ img {
 .f-5, .f-subheadline {
   font-size: 5rem; }
 
-.f1, .home .title, .blog .page-view .blog-full .blog-title {
+.f1, .home .title, .new-blog .page-view .title, .blog .page-view .blog-full .blog-title {
   font-size: 3rem; }
 
-.f2, .login .login-dialog .title, .blog-preview .blog-title {
+.f2, .login .login-dialog .title, .register .register-dialog .title, .blog-preview .blog-title {
   font-size: 2.25rem; }
 
 .f3 {
@@ -2614,7 +2623,8 @@ img {
   transform: scale(0.95); }
 
 .pointer:hover, .action-btn:hover, .nav .home-btn-container button:hover,
-.nav .logout-btn-container button:hover, .login .login-dialog .login-btn-container button:hover, .link:hover, .shadow-hover {
+.nav .logout-btn-container button:hover,
+.nav .new-btn-container button:hover, .login .login-dialog .login-btn-container button:hover, .register .register-dialog .register-btn-container button:hover, .new-blog .page-view .new-blog-btn-container button:hover, .link:hover, .blog-preview:hover, .shadow-hover {
   cursor: pointer; }
 
 .shadow-hover {
@@ -4200,7 +4210,7 @@ img {
     width: 70%; }
   .w-75-m {
     width: 75%; }
-  .w-80-m, .home .blog-list, .blog .page-view .blog-full, .blog .page-view .blog-comment-list {
+  .w-80-m, .home .blog-list, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view .blog-full, .blog .page-view .blog-comment-list {
     width: 80%; }
   .w-90-m {
     width: 90%; }
@@ -5154,7 +5164,7 @@ img {
     width: 60%; }
   .w-70-l {
     width: 70%; }
-  .w-75-l, .home .blog-list, .blog .page-view .blog-full, .blog .page-view .blog-comment-list {
+  .w-75-l, .home .blog-list, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view .blog-full, .blog .page-view .blog-comment-list {
     width: 75%; }
   .w-80-l {
     width: 80%; }
@@ -5620,22 +5630,25 @@ img {
     vertical-align: bottom; } }
 
 .title-font, .action-btn, .nav .home-btn-container button,
-.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .link, .login .login-dialog .title, .home .title, .blog-preview .blog-title, .blog .page-view .blog-full .blog-title {
+.nav .logout-btn-container button,
+.nav .new-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .link, .login .login-dialog .title, .register .register-dialog .title, .home .title, .blog-preview .blog-title, .new-blog .page-view .title, .blog .page-view .blog-full .blog-title {
   font-family: 'Montserrat', 'Helvetica', 'Arial', 'sans-serif'; }
 
 .font, .login .login-dialog .username-input-container input,
-.login .login-dialog .password-input-container input, .blog-preview .blog-content, .blog-preview .blog-meta, .blog .page-view .blog-full .blog-meta, .blog .page-view .blog-full .blog-content, .blog .page-view .comment-title, .comment .comment-content, .comment .comment-meta {
+.login .login-dialog .password-input-container input, .register .register-dialog .username-input-container input,
+.register .register-dialog .password-input-container input, .blog-preview .blog-content, .blog-preview .blog-meta, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .blog-full .blog-meta, .blog .page-view .blog-full .blog-content, .blog .page-view .comment-title, .comment .comment-content, .comment .comment-meta {
   font-family: 'Avenir', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'; }
 
 .action-btn, .nav .home-btn-container button,
-.nav .logout-btn-container button, .login .login-dialog .login-btn-container button {
+.nav .logout-btn-container button,
+.nav .new-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button {
   color: #EEA221; }
 
 .nav {
   height: 75px; }
 
 .login {
-  background-image: url("../images/login-background2.jpg");
+  background-image: url("../images/login-background4.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh; }
@@ -5644,3 +5657,17 @@ img {
     width: 400px; }
     .login .login-dialog .title {
       color: #EEA221; }
+
+.register {
+  background-image: url("../images/login-background4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh; }
+  .register .register-dialog {
+    height: 300px;
+    width: 400px; }
+    .register .register-dialog .title {
+      color: #EEA221; }
+
+.new-blog .page-view .blog-content-text-area textarea {
+  height: 300px; }
