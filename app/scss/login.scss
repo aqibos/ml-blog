@@ -1,0 +1,28 @@
+.login {
+  @extend .flex, .justify-center, .items-center;
+  background-image: url('../images/login-background2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  
+  .login-dialog {
+    @extend .flex, .flex-column, .items-center;
+    @extend .bg-white;
+    height: 300px;
+    width: 400px;
+
+    .title { @extend .title-font, .f2, .tc, .pa2, .pv4; color: $yellow-color;  }
+    .username-input-container, 
+    .password-input-container {
+      @extend .w-80;
+      input {
+        @extend .w-100, .pa2, .font, .ba;
+      }
+    }
+    .login-btn-container {
+      @extend .w-80, .pa2;
+      button { @extend .w-100, .action-btn; }
+    }
+  }
+
+}

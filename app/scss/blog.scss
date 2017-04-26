@@ -1,0 +1,33 @@
+.blog {
+
+
+  .page-view {
+    @extend .flex, .flex-column, .items-center;
+
+    .blog-full {
+      @extend .w-75-l, .w-80-m, .w-90, .mv4, .bb;
+
+      .blog-title {
+        @extend .f1, .title-font, .b, .tc;
+      }
+
+      .blog-meta{
+        @extend .f5, .font, .tc, .i, .gray;
+      }
+
+      .blog-content {
+        @extend .font, .w-100, .pv4;
+      }
+    }
+
+    .comment-title {
+      @extend .f4, .b, .font;
+    }
+    
+    .blog-comment-list {
+      @extend .flex, .flex-column, .items-center, .w-75-l, .w-80-m, .w-90;
+    }
+
+  }
+
+}

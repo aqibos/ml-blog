@@ -10,11 +10,9 @@ import Register from './register';
 import Blog from './blog';
 
 m.route(document.querySelector('#app'), '/', {
-
   '/': Login({ api }),
   '/login': Login({ api }),
   '/register': Register({ api }),
   '/home': Home({ api }),
   '/blogs': Blog({ api })
-
 });

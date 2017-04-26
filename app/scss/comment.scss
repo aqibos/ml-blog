@@ -1,0 +1,5 @@
+.comment {
+  @extend .pa2, .bb, .b--gray;
+  .comment-content { @extend .font; }
+  .comment-meta { @extend .font, .f6, .gray, .pa2; }
+}
