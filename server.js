@@ -4,11 +4,11 @@ const port = process.env.PORT || 5000;
 const app = express();
 
 // Set root
-app.use(express.static(path.join(__dirname, '/')));
+app.use(express.static(path.join(__dirname, '')));
 
 // Route all requests to index.html -- app will handle routing.
 app.get('*', function(req, res) {
-  res.sendFile(__dirname + 'index.html');
+  res.sendFile(__dirname + '/index.html');
 });
 
 // Start app
