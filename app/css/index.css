@@ -1369,7 +1369,7 @@ img {
 .dark-red {
   color: #e7040f; }
 
-.red {
+.red, .error {
   color: #ff4136; }
 
 .light-red {
@@ -1975,7 +1975,7 @@ img {
 .pl2 {
   padding-left: .5rem; }
 
-.pl3 {
+.pl3, .nav .home-btn-container {
   padding-left: 1rem; }
 
 .pl4 {
@@ -1999,7 +1999,7 @@ img {
 .pr2 {
   padding-right: .5rem; }
 
-.pr3 {
+.pr3, .nav .logout-btn-container {
   padding-right: 1rem; }
 
 .pr4 {
@@ -2102,9 +2102,7 @@ img {
   padding-left: .25rem;
   padding-right: .25rem; }
 
-.ph2, .nav .home-btn-container button,
-.nav .logout-btn-container button,
-.nav .new-btn-container button {
+.ph2 {
   padding-left: .5rem;
   padding-right: .5rem; }
 
@@ -5634,7 +5632,7 @@ img {
 .nav .new-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .link, .login .login-dialog .title, .register .register-dialog .title, .home .title, .blog-preview .blog-title, .new-blog .page-view .title, .blog .page-view .blog-full .blog-title {
   font-family: 'Montserrat', 'Helvetica', 'Arial', 'sans-serif'; }
 
-.font, .login .login-dialog .username-input-container input,
+.font, .error, .login .login-dialog .username-input-container input,
 .login .login-dialog .password-input-container input, .register .register-dialog .username-input-container input,
 .register .register-dialog .password-input-container input, .blog-preview .blog-content, .blog-preview .blog-meta, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .blog-full .blog-meta, .blog .page-view .blog-full .blog-content, .blog .page-view .comment-title, .comment .comment-content, .comment .comment-meta {
   font-family: 'Avenir', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'; }
@@ -5642,7 +5640,11 @@ img {
 .action-btn, .nav .home-btn-container button,
 .nav .logout-btn-container button,
 .nav .new-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button {
-  color: #EEA221; }
+  color: #EEA221;
+  height: 50px; }
+
+button img {
+  height: 100%; }
 
 .nav {
   height: 75px; }

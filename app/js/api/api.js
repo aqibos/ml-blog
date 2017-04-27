@@ -17,21 +17,24 @@ const apiUrl = isHost(liveHost) ? liveApi
 const api = makeApi(apiUrl);
 
 function normalize(fn) {
-
   const isSuccess = status => status >= 200 && status <= 299;
-  const success = data => Promise.resolve({ success: true, data });
+  const success = data =>  Promise.resolve({ success: true, data });
   const error = err => ({ success: false, err, errMsg: err.message });
+
+  const apiSuccess = succeedWith => succeedWith.then(success).catch(error);
+  const apiFail = failWith => failWith.then(error).catch(error);
 
   return function(data) {
     return fn(data)
-      .then(res => success(res.data))
-      .catch(err =>
-        error.response ? error(err.response.data) :
-        error.request  ? error({ errMsg: 'No response was received from the server.' }) :
-                         error(err)
-      );
+    .then(res => isSuccess(res.status) ? apiSuccess(res.json()) : apiFail(res.json()))
+    .catch(err => {
+      console.log('catch', err);
+      console.log(err.name + err.message);
+      return error(err.name + err.message);
+    });
   };
 }
+
 
 module.exports = {
 
@@ -46,6 +49,9 @@ module.exports = {
   deleteComment: normalize(api.deleteComment),
 
   login: normalize(api.login),
-  logout: normalize(api.logout)
+  logout: normalize(api.logout),
+
+  register: normalize(api.register),
+  getMe: normalize(api.getMe)
 
 };

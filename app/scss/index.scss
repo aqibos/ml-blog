@@ -17,10 +17,19 @@ $yellow-color: #EEA221;
 .action-btn {
   @extend .clear-btn, .pa2, .title-font, .pointer;
   color: $yellow-color;
+  height: 50px;
 }
 
 .link {
   @extend .bg-transparent, .underline, .gray, .title-font, .pointer, .f6;
+}
+
+button img {
+  height: 100%;
+}
+
+.error {
+  @extend .red, .font;
 }
 
 @import 'nav';

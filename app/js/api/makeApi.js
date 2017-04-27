@@ -1,30 +1,46 @@
-import axios from 'axios';
+// import axios from 'axios';
+// axios.defaults.headers.post['Content-type'] = 'application/json';
+import 'whatwg-fetch';
 import { curry } from 'ramda';
-axios.defaults.headers.post['Content-type'] = 'application/json';
 
-export default function makeApi(root) {
+module.exports = (root) => {
 
-  const httpRequestBuilder = (httpMethod, url, data) => ({
-    method: httpMethod,
-    url,
-    data,
-    withCredentials: true
+  // FETCH IMPLEMENTATION
+  const headers = new Headers({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*'
   });
 
-  const get = curry((url, querystring) => axios({
+  const get = url => qs => fetch(url + (qs || ''), {
     method: 'GET',
-    url: url + (querystring || ''),
-    withCredentials: true
-  }));
-  const post = curry(
-    (url, data) => axios(httpRequestBuilder('POST', url, data))
-  );
-  const del = curry(
-    (url, data) => axios(httpRequestBuilder('DELETE', url, data))
-  );
-  const put = curry(
-    (url, data) => axios(httpRequestBuilder('PUT', url, data))
-  );
+    mode: 'cors',
+    credentials: 'include',
+    headers
+  });
+
+  const post = url => body => fetch(url, {
+    method: 'POST',
+    mode: 'cors',
+    credentials: 'include',
+    headers,
+    body: JSON.stringify(body)
+  });
+
+  const del = url => body => fetch(url, {
+    method: 'DELETE',
+    mode: 'cors',
+    credentials: 'include',
+    headers,
+    body: JSON.stringify(body)
+  });
+
+  const put = url => body => fetch(url, {
+    method: 'PUT',
+    mode: 'cors',
+    credentials: 'include',
+    headers,
+    body: JSON.stringify(body)
+  });
 
   return {
     getBlogs: get(`${root}/blogs`),
@@ -38,6 +54,46 @@ export default function makeApi(root) {
     putComment: put(`${root}/comments`),
 
     login: post(`${root}/login`),
-    logout: del(`${root}/logout`)
+    logout: del(`${root}/logout`),
+
+    register: post(`${root}/users`),
+    getMe: get(`${root}/users/me`)
   };
 }
+
+  // const httpRequestBuilder = (httpMethod, url, data) => ({
+  //   method: httpMethod,
+  //   url,
+  //   data,
+  //   withCredentials: true
+  // });
+
+  // const get = url => querystring => axios({
+  //   method: 'GET',
+  //   url: url + (querystring || ''),
+  //   withCredentials: true
+  // });
+  // const post =
+  //   // (url, data) => axios(httpRequestBuilder('POST', url, data))
+  //   url => data => axios({
+  //     method: 'POST',
+  //     url,
+  //     data,
+  //     withCredentials: true
+  //   });
+  // const del =
+  //   // (url, data) => axios(httpRequestBuilder('DELETE', url, data))
+  //   url => data => axios({
+  //     method: 'DELETE',
+  //     url,
+  //     data,
+  //     withCredentials: true
+  //   });
+  // const put =
+  //   // (url, data) => axios(httpRequestBuilder('PUT', url, data))
+  //   url => data => axios({
+  //     method: 'PUT',
+  //     url,
+  //     data,
+  //     withCredentials: true
+  //   });

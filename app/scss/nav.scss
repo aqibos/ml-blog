@@ -2,9 +2,11 @@
   @extend .flex,.justify-between, .items-center, .bg-black;
   height: 75px;
   
+  .home-btn-container { @extend .pl3; }
+  .logout-btn-container { @extend .pr3; }
   .home-btn-container button, 
   .logout-btn-container button,
   .new-btn-container button {
-    @extend .action-btn, .white, .ph2;
+    @extend .action-btn, .white;
   }
 }
