@@ -6,6 +6,8 @@
 
   .blog-list {
     @extend .w-75-l, .w-80-m, .w-90, .flex, .flex-column, .items-center, .justify-center;
+
+    .blog-preview { @extend .w-100; }
   }
 
 }

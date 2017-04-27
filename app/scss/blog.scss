@@ -1,33 +1,22 @@
 .blog {
-
-
   .page-view {
     @extend .flex, .flex-column, .items-center;
-
     .blog-full {
       @extend .w-75-l, .w-80-m, .w-90, .mv4, .bb;
-
-      .blog-title {
-        @extend .f1, .title-font, .b, .tc;
-      }
-
-      .blog-meta{
-        @extend .f5, .font, .tc, .i, .gray;
-      }
-
-      .blog-content {
-        @extend .font, .w-100, .pv4;
-      }
+      .blog-title { @extend .f1, .title-font, .b, .tc; }
+      .blog-meta{ @extend .f5, .font, .tc, .i, .gray; }
+      .blog-content { @extend .font, .w-100, .pv4; }
     }
-
-    .comment-title {
-      @extend .f4, .b, .font;
-    }
-    
-    .blog-comment-list {
+    .error { @extend .pa2, .pt3; }
+    .comment-title { @extend .f4, .b, .font; }
+    .blog-comment-list { @extend .flex, .flex-column, .items-center, .w-75-l, .w-80-m, .w-90; }
+    .blog-comment-list .comment { @extend .w-100; }
+    .new-comment-container {
       @extend .flex, .flex-column, .items-center, .w-75-l, .w-80-m, .w-90;
+      // .new-comment-text-area { @extend .flex, .flex-column, .items-center, .w-75-l, .w-80-m, .w-90; }
+      .new-comment-text-area { @extend .w-100; }
+      .new-comment-text-area textarea { @extend .w-100, .pa2, .mv2, .font; min-height: 100px; max-width: 100%; }
+      .new-comment-btn-container button { @extend .action-btn; }
     }
-
   }
-
 }

@@ -5,10 +5,15 @@ import button from './button';
 export default function Nav({ api }) {
 
   const isLogoutLoading = stream(false);
+  const apiError = stream('');
 
   const logout = () => {
-    // TODO: api.logout
-    m.route.set('/login');
+    api.logout()
+    .then(res => {
+      if (!res.success) throw res.errMsg;
+      m.route.set('/login');
+    })
+    .catch(err => { console.log(err); apiError(err); m.redraw(); })
   }
   const toHome = () => m.route.set('/home');
 

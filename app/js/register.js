@@ -31,42 +31,19 @@ export default function Register({ api }) {
 
   const login = () => m.route.set('/login');
 
-  // UI
-  // const usernameInput = () =>
-  //   inputBox('username', newUsername);
-  // const passwordInput = () =>
-  //   inputBox('password', newUsername, 'password');
-  // const registerButton = () =>
-  //   button('register', register, 'Register', isRegisterLoading());
-  // const loginLink = () =>
-  //   link('login', login, 'Already have an account?');
-  const loadingImg = m('img', { src: 'app/images/loading-bubbles.gif' });
   const registerDialog = () => m('.register-dialog', [
     m('.title', 'Register Account'),
     m('.error', apiError()),
-    m('.username-input-container', m('input', {
-      onchange: e => { newUsername(e.target.value); },
-      placeholder: 'Username'
-    })),
-    m('.password-input-container', m('input', {
-      onchange: e => { newPassword(e.target.value); },
-      placeholder: 'Password'
-    })),
-    m('.register-btn-container', m('button', {
-      onclick: register
-    }, isRegisterLoading() ? loadingImg : 'Register Account')),
-
-    m('.login-link-container', m('.link', {
-      onclick: login
-    }, 'Already have an account?'))
+    inputBox('username', newUsername),
+    inputBox('password', newPassword, 'password'),
+    button('register', register, 'Register', isRegisterLoading()),
+    link('login', login, 'Already have an account?')
   ]);
 
-  const view = () => {
-    console.log('Username', newUsername());
-    console.log('Password', newPassword());
-    return m('.register', registerDialog());
-  }
+  const oncreate = () => { newUsername(''); newPassword(''); apiError(''); m.redraw(); };
 
-  return { view };
+  const view = () => m('.register', registerDialog());
+
+  return { oncreate, view };
 
 }

@@ -2,6 +2,8 @@
 $blue-color: #2266AA;
 $yellow-color: #EEA221;
 
+body { @extend .mb5; }
+
 .title-font {
   font-family: 'Montserrat', 'Helvetica', 'Arial', 'sans-serif';
 }
@@ -10,33 +12,33 @@ $yellow-color: #EEA221;
   font-family: 'Avenir', 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
 }
 
-.clear-btn {
-  @extend .bn, .bg-transparent;  
-}
+.clear-btn { @extend .bn, .bg-transparent; }
 
 .action-btn {
   @extend .clear-btn, .pa2, .title-font, .pointer;
   color: $yellow-color;
   height: 50px;
 }
-
-.link {
-  @extend .bg-transparent, .underline, .gray, .title-font, .pointer, .f6;
+.action-btn:hover {
+  color: $blue-color;
 }
 
-button img {
-  height: 100%;
-}
+.link { @extend .bg-transparent, .underline, .gray, .title-font, .pointer, .f6; }
 
-.error {
-  @extend .red, .font;
-}
+button img { height: 100%; }
+
+.error { @extend .red, .font, .b; }
 
 @import 'nav';
+
+// Components
+@import 'loading';
+@import 'comment';
+@import 'blog_preview';
+
+// Pages
 @import 'login';
 @import 'register';
 @import 'home';
-@import 'blog_preview';
 @import 'new_blog';
 @import 'blog';
-@import 'comment';

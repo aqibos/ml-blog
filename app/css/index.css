@@ -250,9 +250,9 @@ img {
 .outline-0 {
   outline: 0; }
 
-.ba, .login .login-dialog .username-input-container input,
+.ba, .comment, .login .login-dialog .username-input-container input,
 .login .login-dialog .password-input-container input, .register .register-dialog .username-input-container input,
-.register .register-dialog .password-input-container input, .comment {
+.register .register-dialog .password-input-container input {
   border-style: solid;
   border-width: 1px; }
 
@@ -274,7 +274,8 @@ img {
 
 .bn, .clear-btn, .action-btn, .nav .home-btn-container button,
 .nav .logout-btn-container button,
-.nav .new-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button {
+.nav .new-btn-container button, .comment .comment-btn-containers .edit-comment-btn-container button,
+.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button {
   border-style: none;
   border-width: 0; }
 
@@ -302,7 +303,7 @@ img {
 .b--moon-gray {
   border-color: #ccc; }
 
-.b--light-gray, .blog-preview, .comment {
+.b--light-gray, .comment, .blog-preview {
   border-color: #eee; }
 
 .b--near-white {
@@ -686,7 +687,7 @@ img {
   table-layout: fixed;
   width: 100%; }
 
-.flex, .nav, .login, .login .login-dialog, .register, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view, .blog .page-view .blog-comment-list {
+.flex, .nav, .loading-view, .comment .comment-btn-containers, .login, .login .login-dialog, .register, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view, .blog .page-view .blog-comment-list, .blog .page-view .new-comment-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
@@ -708,12 +709,12 @@ img {
   -ms-flex: none;
   flex: none; }
 
-.flex-column, .login .login-dialog, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .blog .page-view, .blog .page-view .blog-comment-list {
+.flex-column, .login .login-dialog, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .blog .page-view, .blog .page-view .blog-comment-list, .blog .page-view .new-comment-container {
   -webkit-box-orient: vertical;
   -ms-flex-direction: column;
   flex-direction: column; }
 
-.flex-column, .login .login-dialog, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .blog .page-view, .blog .page-view .blog-comment-list, .flex-row {
+.flex-column, .login .login-dialog, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .blog .page-view, .blog .page-view .blog-comment-list, .blog .page-view .new-comment-container, .flex-row {
   -webkit-box-direction: normal; }
 
 .flex-row {
@@ -735,7 +736,7 @@ img {
   -ms-flex-align: end;
   align-items: flex-end; }
 
-.items-center, .nav, .login, .login .login-dialog, .register, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .blog .page-view, .blog .page-view .blog-comment-list {
+.items-center, .nav, .login, .login .login-dialog, .register, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .blog .page-view, .blog .page-view .blog-comment-list, .blog .page-view .new-comment-container {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
@@ -782,7 +783,7 @@ img {
   -ms-flex-pack: end;
   justify-content: flex-end; }
 
-.justify-center, .login, .register, .home .blog-list, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area {
+.justify-center, .loading-view, .login, .register, .home .blog-list, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
@@ -936,7 +937,7 @@ img {
 .normal {
   font-weight: 400; }
 
-.b, .home .title, .blog-preview .blog-title, .new-blog .page-view .title, .blog .page-view .blog-full .blog-title, .blog .page-view .comment-title {
+.b, .error, .blog-preview .blog-title, .home .title, .new-blog .page-view .title, .blog .page-view .blog-full .blog-title, .blog .page-view .comment-title {
   font-weight: 700; }
 
 .fw1 {
@@ -1142,12 +1143,12 @@ img {
 .register .register-dialog .password-input-container, .register .register-dialog .register-btn-container {
   width: 80%; }
 
-.w-90, .home .blog-list, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view .blog-full, .blog .page-view .blog-comment-list {
+.w-90, .home .blog-list, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view .blog-full, .blog .page-view .blog-comment-list, .blog .page-view .new-comment-container {
   width: 90%; }
 
-.w-100, .login .login-dialog .username-input-container input,
+.w-100, .comment .edit-comment-text-area textarea, .login .login-dialog .username-input-container input,
 .login .login-dialog .password-input-container input, .login .login-dialog .login-btn-container button, .register .register-dialog .username-input-container input,
-.register .register-dialog .password-input-container input, .register .register-dialog .register-btn-container button, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .blog-full .blog-content {
+.register .register-dialog .password-input-container input, .register .register-dialog .register-btn-container button, .home .blog-list .blog-preview, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .blog-full .blog-content, .blog .page-view .blog-comment-list .comment, .blog .page-view .new-comment-container .new-comment-text-area, .blog .page-view .new-comment-container .new-comment-text-area textarea {
   width: 100%; }
 
 .w-third {
@@ -1343,7 +1344,7 @@ img {
 .mid-gray {
   color: #555; }
 
-.gray, .link, .blog .page-view .blog-full .blog-meta, .comment .comment-meta {
+.gray, .link, .comment .comment-meta, .blog .page-view .blog-full .blog-meta {
   color: #777; }
 
 .silver {
@@ -1533,7 +1534,8 @@ img {
 
 .bg-transparent, .clear-btn, .action-btn, .nav .home-btn-container button,
 .nav .logout-btn-container button,
-.nav .new-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .link {
+.nav .new-btn-container button, .comment .comment-btn-containers .edit-comment-btn-container button,
+.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .link {
   background-color: transparent; }
 
 .bg-dark-red {
@@ -1946,9 +1948,10 @@ img {
 
 .pa2, .action-btn, .nav .home-btn-container button,
 .nav .logout-btn-container button,
-.nav .new-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .login .login-dialog .title, .login .login-dialog .username-input-container input,
+.nav .new-btn-container button, .comment .comment-btn-containers .edit-comment-btn-container button,
+.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .comment, .comment .comment-meta, .comment .edit-comment-text-area textarea, .login .login-dialog .title, .login .login-dialog .username-input-container input,
 .login .login-dialog .password-input-container input, .login .login-dialog .login-btn-container, .register .register-dialog .title, .register .register-dialog .username-input-container input,
-.register .register-dialog .password-input-container input, .register .register-dialog .register-btn-container, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .comment, .comment .comment-meta {
+.register .register-dialog .password-input-container input, .register .register-dialog .register-btn-container, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .error, .blog .page-view .new-comment-container .new-comment-text-area textarea {
   padding: .5rem; }
 
 .pa3 {
@@ -2047,13 +2050,13 @@ img {
 .pt2 {
   padding-top: .5rem; }
 
-.pt3 {
+.pt3, .blog .page-view .error {
   padding-top: 1rem; }
 
 .pt4 {
   padding-top: 2rem; }
 
-.pt5 {
+.pt5, .loading-view {
   padding-top: 4rem; }
 
 .pt6 {
@@ -2213,7 +2216,7 @@ img {
 .mb4 {
   margin-bottom: 2rem; }
 
-.mb5 {
+.mb5, body {
   margin-bottom: 4rem; }
 
 .mb6 {
@@ -2254,7 +2257,7 @@ img {
   margin-top: .25rem;
   margin-bottom: .25rem; }
 
-.mv2 {
+.mv2, .blog .page-view .new-comment-container .new-comment-text-area textarea {
   margin-top: .5rem;
   margin-bottom: .5rem; }
 
@@ -2476,7 +2479,7 @@ img {
 .f1, .home .title, .new-blog .page-view .title, .blog .page-view .blog-full .blog-title {
   font-size: 3rem; }
 
-.f2, .login .login-dialog .title, .register .register-dialog .title, .blog-preview .blog-title {
+.f2, .blog-preview .blog-title, .login .login-dialog .title, .register .register-dialog .title {
   font-size: 2.25rem; }
 
 .f3 {
@@ -2622,7 +2625,8 @@ img {
 
 .pointer:hover, .action-btn:hover, .nav .home-btn-container button:hover,
 .nav .logout-btn-container button:hover,
-.nav .new-btn-container button:hover, .login .login-dialog .login-btn-container button:hover, .register .register-dialog .register-btn-container button:hover, .new-blog .page-view .new-blog-btn-container button:hover, .link:hover, .blog-preview:hover, .shadow-hover {
+.nav .new-btn-container button:hover, .comment .comment-btn-containers .edit-comment-btn-container button:hover,
+.comment .comment-btn-containers .delete-comment-btn-container button:hover, .comment .save-edit-comment-btn-container button:hover, .login .login-dialog .login-btn-container button:hover, .register .register-dialog .register-btn-container button:hover, .new-blog .page-view .new-blog-btn-container button:hover, .blog .page-view .new-comment-container .new-comment-btn-container button:hover, .link:hover, .blog-preview:hover, .shadow-hover {
   cursor: pointer; }
 
 .shadow-hover {
@@ -4208,7 +4212,7 @@ img {
     width: 70%; }
   .w-75-m {
     width: 75%; }
-  .w-80-m, .home .blog-list, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view .blog-full, .blog .page-view .blog-comment-list {
+  .w-80-m, .home .blog-list, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view .blog-full, .blog .page-view .blog-comment-list, .blog .page-view .new-comment-container {
     width: 80%; }
   .w-90-m {
     width: 90%; }
@@ -5162,7 +5166,7 @@ img {
     width: 60%; }
   .w-70-l {
     width: 70%; }
-  .w-75-l, .home .blog-list, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view .blog-full, .blog .page-view .blog-comment-list {
+  .w-75-l, .home .blog-list, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view .blog-full, .blog .page-view .blog-comment-list, .blog .page-view .new-comment-container {
     width: 75%; }
   .w-80-l {
     width: 80%; }
@@ -5629,25 +5633,37 @@ img {
 
 .title-font, .action-btn, .nav .home-btn-container button,
 .nav .logout-btn-container button,
-.nav .new-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .link, .login .login-dialog .title, .register .register-dialog .title, .home .title, .blog-preview .blog-title, .new-blog .page-view .title, .blog .page-view .blog-full .blog-title {
+.nav .new-btn-container button, .comment .comment-btn-containers .edit-comment-btn-container button,
+.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .link, .blog-preview .blog-title, .login .login-dialog .title, .register .register-dialog .title, .home .title, .new-blog .page-view .title, .blog .page-view .blog-full .blog-title {
   font-family: 'Montserrat', 'Helvetica', 'Arial', 'sans-serif'; }
 
-.font, .error, .login .login-dialog .username-input-container input,
+.font, .error, .comment .comment-content, .comment .comment-meta, .comment .edit-comment-text-area textarea, .blog-preview .blog-content, .blog-preview .blog-meta, .login .login-dialog .username-input-container input,
 .login .login-dialog .password-input-container input, .register .register-dialog .username-input-container input,
-.register .register-dialog .password-input-container input, .blog-preview .blog-content, .blog-preview .blog-meta, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .blog-full .blog-meta, .blog .page-view .blog-full .blog-content, .blog .page-view .comment-title, .comment .comment-content, .comment .comment-meta {
+.register .register-dialog .password-input-container input, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .blog-full .blog-meta, .blog .page-view .blog-full .blog-content, .blog .page-view .comment-title, .blog .page-view .new-comment-container .new-comment-text-area textarea {
   font-family: 'Avenir', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'; }
 
 .action-btn, .nav .home-btn-container button,
 .nav .logout-btn-container button,
-.nav .new-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button {
+.nav .new-btn-container button, .comment .comment-btn-containers .edit-comment-btn-container button,
+.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button {
   color: #EEA221;
   height: 50px; }
+
+.action-btn:hover, .nav .home-btn-container button:hover,
+.nav .logout-btn-container button:hover,
+.nav .new-btn-container button:hover, .comment .comment-btn-containers .edit-comment-btn-container button:hover,
+.comment .comment-btn-containers .delete-comment-btn-container button:hover, .comment .save-edit-comment-btn-container button:hover, .login .login-dialog .login-btn-container button:hover, .register .register-dialog .register-btn-container button:hover, .new-blog .page-view .new-blog-btn-container button:hover, .blog .page-view .new-comment-container .new-comment-btn-container button:hover {
+  color: #2266AA; }
 
 button img {
   height: 100%; }
 
 .nav {
   height: 75px; }
+
+.comment .edit-comment-text-area textarea {
+  min-height: 50px;
+  max-width: 100%; }
 
 .login {
   background-image: url("../images/login-background4.jpg");
@@ -5673,3 +5689,7 @@ button img {
 
 .new-blog .page-view .blog-content-text-area textarea {
   height: 300px; }
+
+.blog .page-view .new-comment-container .new-comment-text-area textarea {
+  min-height: 100px;
+  max-width: 100%; }

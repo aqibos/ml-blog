@@ -1,7 +1,6 @@
 .new-blog {
   .page-view {
     @extend .flex, .flex-column, .items-center;
-
     .title { @extend .tc, .flex, .justify-center, .w-75-l, .w-80-m, .w-90, .f1, .b, .title-font, .ma4; }
     .blog-title-input-container { @extend .flex, .justify-center, .w-75-l, .w-80-m, .w-90;; }
     .blog-title-input-container input { @extend .w-100, .pa2, .font; }

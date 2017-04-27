@@ -1,48 +1,98 @@
 import m from 'mithril';
+import stream from 'mithril/stream';
 import Comment from './components/comment';
 import Nav from './components/nav';
-
-const sampleBlog = {
-  id: 1,
-  username: 'aashah7',
-  title: 'Some blog here',
-  content: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
-  datetime: new Date().toISOString()
-};
-
-const sampleComments = [{
-  id: 1,
-  username: 'aashah7',
-  content: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
-  datetime: new Date().toISOString()
-}, {
-  id: 2,
-  username: 'aashah7',
-  content: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
-  datetime: new Date().toISOString()
-}]
+import LoadingView from './components/loading_view';
+import textArea from './components/textArea';
+import button from './components/button';
+import { curry } from 'ramda';
 
 export default function Blog({ api }) {
 
   const nav = Nav({ api });
+  const isBlogLoading = stream(true);
+  const blogDetails = stream({});
+  const commentList = stream([]);
+  const newComment = stream('');
+  const apiError = stream('');
+  const isNewCommentLoading = stream(false);
+
+  let commentListComponents = [];
+
+  const handleApiError = curry((loadingPropFn, err) => {
+    apiError(err);
+    loadingPropFn(false);
+    m.redraw();
+  });
+
+  const loadBlog = blogId => {
+    api.blogs('?id=' + blogId)
+    .then(res => {
+      if (!res.success) throw res.errMsg;
+      blogDetails(res.data);
+      loadComments(blogId);
+    })
+    .catch(handleApiError(isBlogLoading));
+  };
+
+  const loadComments = blogId => {
+    api.comments('?blogId=' + blogId)
+    .then(res => {
+      if (!res.success) throw res.errMsg;
+      commentList(res.data);
+      commentListComponents = res.data.map(c => Comment({ params: c, api }));
+      isBlogLoading(false);
+      m.redraw();
+    })
+    .catch(handleApiError(isBlogLoading));
+  };
+
+  const createComment = () => {
+    apiError('');
+    const blogId = m.route.param('id');
+    api.createComment({ blogId, content: newComment() })
+    .then(res => {
+      if (!res.success) throw res.errMsg;
+      newComment('');
+      isNewCommentLoading(false);
+      loadComments(blogId);
+    })
+    .catch(handleApiError(isNewCommentLoading))
+  }
 
   const blog = () => m('.blog-full', [
-    m('.blog-title', sampleBlog.title),
-    m('.blog-meta', 'Posted by ' + sampleBlog.username + ' on ' + new Date(sampleBlog.datetime).toDateString()),
-    m('.blog-content', sampleBlog.content)
+    m('.blog-title', blogDetails().title),
+    m('.blog-meta', 'Posted by ' + blogDetails().username + ' on ' + new Date(blogDetails().datetime).toDateString()),
+    m('.blog-content', blogDetails().content)
   ]);
 
-  const comments = () => m('.blog-comment-list', sampleComments.map(c => m(Comment(c))));
+  const comments = () => m('.blog-comment-list', commentListComponents.map(m));
+
+  const newCommentBox = () => textArea('new-comment', newComment, 'Add a comment');
+  const newCommentButton = () => button('new-comment', createComment, 'Add Comment', isNewCommentLoading());
+  const newCommentContainer = () => m('.new-comment-container', [ newCommentBox(), newCommentButton() ]);
+
+  const pageView = () => m('.page-view', [
+    blog(),
+    m('.comment-title', `Comments (${commentList().length})` ),
+    comments(),
+    m('.error', apiError()),
+    newCommentContainer()
+  ]);
+
+  const oncreate = () => {
+    apiError(''); isBlogLoading(true); m.redraw();
+
+    const blogId = m.route.param('id');
+    if (blogId) { loadBlog(blogId); }
+    else m.route.set('/home');
+  };
 
   const view = () => m('.blog',
     m(nav),
-    m('.page-view', [
-      blog(),
-      m('.comment-title', 'Comments'),
-      comments()
-    ])
+    isBlogLoading() ? LoadingView() : pageView()
   );
 
-  return { view };
+  return { oncreate, view };
 
 }

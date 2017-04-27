@@ -1,8 +1,8 @@
 import m from 'mithril';
 import stream from 'mithril/stream';
-// import button from './components/button';
-// import inputBox from './components/inputBox';
-// import link from './components/link';
+import button from './components/button';
+import inputBox from './components/inputBox';
+import link from './components/link';
 
 export default function Login({ api }) {
 
@@ -35,30 +35,16 @@ export default function Login({ api }) {
   const loginDialog = () => m('.login-dialog', [
     m('.title', 'Sign In'),
     m('.error', apiError()),
-    // inputBox('username', username),
-    // inputBox('password', password, 'password'),
-    // button('login', login, 'Login', isLoginLoading()),
-    // link('register', register, 'Register')
-
-    m('.username-input-container', m('input', {
-      onchange: e => { username(e.target.value); },
-      placeholder: 'Username'
-    })),
-    m('.password-input-container', m('input', {
-      onchange: e => { password(e.target.value); },
-      placeholder: 'Password'
-    })),
-    m('.login-btn-container', m('button', {
-      onclick: login
-    }, isLoginLoading() ? loadingImg : 'Login')),
-
-    m('.register-link-container', m('.link', {
-      onclick: register
-    }, 'I need an account!'))
+    inputBox('username', username),
+    inputBox('password', password, 'password'),
+    button('login', login, 'Login', isLoginLoading()),
+    link('register', register, 'Register')
   ]);
+
+  const oncreate = () => { username(''); password(''); apiError(''); m.redraw(); };
 
   const view = () => m('.login', loginDialog());
 
-  return { view };
+  return { oncreate, view };
 
 }
