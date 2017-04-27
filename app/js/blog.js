@@ -48,7 +48,7 @@ export default function Blog({ api }) {
   };
 
   const createComment = () => {
-    apiError('');
+    isNewCommentLoading(true); apiError('');
     const blogId = m.route.param('id');
     api.createComment({ blogId, content: newComment() })
     .then(res => {
