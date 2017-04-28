@@ -3,6 +3,7 @@ import stream from 'mithril/stream';
 import button from './components/button';
 import inputBox from './components/inputBox';
 import link from './components/link';
+import { setItem } from './util/session_storage';
 
 export default function Register({ api }) {
 
@@ -19,10 +20,13 @@ export default function Register({ api }) {
     api.register({ username: newUsername(), password: newPassword() })
     .then(res => {
       if (!res.success) throw res.errMsg;
-
+      return api.login({ username: newUsername(), password: newPassword() })
+    })
+    .then(res => {
+      if (!res.success) throw 'Register succeeded, but login failed. Please try logging in.'
       isRegisterLoading(false);
+      setItem('user', res.data);
       m.route.set('/home');
-      // TODO: Save user info
     })
     .catch(err => {
       apiError(err); isRegisterLoading(false); m.redraw();

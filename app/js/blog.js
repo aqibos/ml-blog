@@ -9,15 +9,16 @@ import { curry } from 'ramda';
 
 export default function Blog({ api }) {
 
+  // State
   const nav = Nav({ api });
   const isBlogLoading = stream(true);
   const blogDetails = stream({});
-  const commentList = stream([]);
   const newComment = stream('');
   const apiError = stream('');
   const isNewCommentLoading = stream(false);
+  let commentListComponents = stream([]);
 
-  let commentListComponents = [];
+  // Controller functions
 
   const handleApiError = curry((loadingPropFn, err) => {
     apiError(err);
@@ -25,13 +26,16 @@ export default function Blog({ api }) {
     m.redraw();
   });
 
+  const handleCommentApiSuccess = curry((dataPropFn, res) => {
+    const blogId = m.route.param('id');
+    if (!res.success) throw res.errMsg;
+    dataPropFn(res.data);
+    loadComments(blogId);
+  });
+
   const loadBlog = blogId => {
     api.blogs('?id=' + blogId)
-    .then(res => {
-      if (!res.success) throw res.errMsg;
-      blogDetails(res.data);
-      loadComments(blogId);
-    })
+    .then(handleCommentApiSuccess(blogDetails))
     .catch(handleApiError(isBlogLoading));
   };
 
@@ -39,26 +43,52 @@ export default function Blog({ api }) {
     api.comments('?blogId=' + blogId)
     .then(res => {
       if (!res.success) throw res.errMsg;
-      commentList(res.data);
-      commentListComponents = res.data.map(c => Comment({ params: c, api }));
+      commentListComponents(res.data.map(c => Comment({
+        api, params: c, editFn: editComment, deleteFn: deleteComment
+      })));
       isBlogLoading(false);
       m.redraw();
     })
     .catch(handleApiError(isBlogLoading));
   };
 
-  const createComment = () => {
-    isNewCommentLoading(true); apiError('');
-    const blogId = m.route.param('id');
-    api.createComment({ blogId, content: newComment() })
-    .then(res => {
-      if (!res.success) throw res.errMsg;
-      newComment('');
-      isNewCommentLoading(false);
-      loadComments(blogId);
-    })
-    .catch(handleApiError(isNewCommentLoading))
+  const resetCommentInput = () => {
+    newComment('');
+    isNewCommentLoading(false);
   }
+
+  const commentFn = (fn, params, loadingPropFn, successFn) => {
+    loadingPropFn(true); apiError('');
+    fn(params)
+    .then(handleCommentApiSuccess(successFn))
+    .catch(handleApiError(loadingPropFn));
+  }
+
+  const createComment = () => {
+    const blogId = m.route.param('id');
+    return commentFn(
+      api.createComment,
+      { blogId, content: newComment() },
+      isNewCommentLoading,
+      resetCommentInput
+    );
+  }
+
+  const deleteComment = (commentId, loadingPropFn) => commentFn(
+    api.deleteComment,
+    { commentId },
+    loadingPropFn,
+    loadingPropFn
+  );
+
+  const editComment = (commentId, content, loadingPropFn) => commentFn(
+    api.editComment,
+    { commentId, content },
+    loadingPropFn,
+    loadingPropFn
+  );
+
+  // UI helpers
 
   const blog = () => m('.blog-full', [
     m('.blog-title', blogDetails().title),
@@ -66,7 +96,7 @@ export default function Blog({ api }) {
     m('.blog-content', blogDetails().content)
   ]);
 
-  const comments = () => m('.blog-comment-list', commentListComponents.map(m));
+  const comments = () => m('.blog-comment-list', commentListComponents().map(m));
 
   const newCommentBox = () => textArea('new-comment', newComment, 'Add a comment');
   const newCommentButton = () => button('new-comment', createComment, 'Add Comment', isNewCommentLoading());
@@ -74,11 +104,13 @@ export default function Blog({ api }) {
 
   const pageView = () => m('.page-view', [
     blog(),
-    m('.comment-title', `Comments (${commentList().length})` ),
+    m('.comment-title', `Comments (${commentListComponents().length})` ),
     comments(),
     m('.error', apiError()),
     newCommentContainer()
   ]);
+
+  // Lifecycle functions
 
   const oncreate = () => {
     apiError(''); isBlogLoading(true); m.redraw();

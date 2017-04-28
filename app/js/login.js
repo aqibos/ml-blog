@@ -3,6 +3,7 @@ import stream from 'mithril/stream';
 import button from './components/button';
 import inputBox from './components/inputBox';
 import link from './components/link';
+import { setItem } from './util/session_storage';
 
 export default function Login({ api }) {
 
@@ -21,7 +22,7 @@ export default function Login({ api }) {
 
       isLoginLoading(false);
       m.route.set('/home');
-      // TODO: Save user info
+      setItem('user', res.data);
     })
     .catch(err => {
       apiError(err); isLoginLoading(false); m.redraw();

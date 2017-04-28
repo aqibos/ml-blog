@@ -5,7 +5,7 @@
       @extend .w-75-l, .w-80-m, .w-90, .mv4, .bb;
       .blog-title { @extend .f1, .title-font, .b, .tc; }
       .blog-meta{ @extend .f5, .font, .tc, .i, .gray; }
-      .blog-content { @extend .font, .w-100, .pv4; }
+      .blog-content { @extend .font, .w-100, .pv4; white-space: pre-wrap; word-break: break-word; }
     }
     .error { @extend .pa2, .pt3; }
     .comment-title { @extend .f4, .b, .font; }
