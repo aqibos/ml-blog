@@ -1,6 +1,7 @@
 import m from 'mithril';
 import stream from 'mithril/stream';
 import button from './button';
+import { removeItem } from '../util/session_storage';
 
 export default function Nav({ api }) {
 
@@ -11,6 +12,7 @@ export default function Nav({ api }) {
     api.logout()
     .then(res => {
       if (!res.success) throw res.errMsg;
+      removeItem('user');
       m.route.set('/login');
     })
     .catch(err => { console.log(err); apiError(err); m.redraw(); })

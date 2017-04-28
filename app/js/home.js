@@ -19,6 +19,8 @@ export default function Home({ api }) {
   // Lifecycle Methods
 
   const oncreate = () => {
+    isLoadingBlogs(true); m.redraw();
+
     api.blogs()
     .then(res => {
       console.log('res', res);

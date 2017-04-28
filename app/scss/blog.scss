@@ -6,6 +6,11 @@
       .blog-title { @extend .f1, .title-font, .b, .tc; }
       .blog-meta{ @extend .f5, .font, .tc, .i, .gray; }
       .blog-content { @extend .font, .w-100, .pv4; white-space: pre-wrap; word-break: break-word; }
+      .blog-actions {
+        @extend .flex;
+        .edit-blog-btn-container button { @extend .action-btn, .ph3; }
+        .delete-blog-btn-container button { @extend .action-btn, .ph3; }
+      }
     }
     .error { @extend .pa2, .pt3; }
     .comment-title { @extend .f4, .b, .font; }

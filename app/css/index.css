@@ -275,7 +275,7 @@ img {
 .bn, .clear-btn, .action-btn, .nav .home-btn-container button,
 .nav .logout-btn-container button,
 .nav .new-btn-container button, .comment .comment-btn-containers .edit-comment-btn-container button,
-.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button {
+.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button {
   border-style: none;
   border-width: 0; }
 
@@ -687,7 +687,7 @@ img {
   table-layout: fixed;
   width: 100%; }
 
-.flex, .nav, .loading-view, .comment .comment-btn-containers, .login, .login .login-dialog, .register, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view, .blog .page-view .blog-comment-list, .blog .page-view .new-comment-container {
+.flex, .nav, .loading-view, .comment .comment-btn-containers, .login, .login .login-dialog, .register, .register .register-dialog, .home .page-view, .home .blog-list, .new-blog .page-view, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view, .blog .page-view .blog-full .blog-actions, .blog .page-view .blog-comment-list, .blog .page-view .new-comment-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
@@ -1535,7 +1535,7 @@ img {
 .bg-transparent, .clear-btn, .action-btn, .nav .home-btn-container button,
 .nav .logout-btn-container button,
 .nav .new-btn-container button, .comment .comment-btn-containers .edit-comment-btn-container button,
-.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .link {
+.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .link {
   background-color: transparent; }
 
 .bg-dark-red {
@@ -1949,7 +1949,7 @@ img {
 .pa2, .action-btn, .nav .home-btn-container button,
 .nav .logout-btn-container button,
 .nav .new-btn-container button, .comment .comment-btn-containers .edit-comment-btn-container button,
-.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .comment, .comment .comment-meta, .comment .edit-comment-text-area textarea, .login .login-dialog .title, .login .login-dialog .username-input-container input,
+.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .comment, .comment .comment-meta, .comment .edit-comment-text-area textarea, .login .login-dialog .title, .login .login-dialog .username-input-container input,
 .login .login-dialog .password-input-container input, .login .login-dialog .login-btn-container, .register .register-dialog .title, .register .register-dialog .username-input-container input,
 .register .register-dialog .password-input-container input, .register .register-dialog .register-btn-container, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .error, .blog .page-view .new-comment-container .new-comment-text-area textarea {
   padding: .5rem; }
@@ -2109,7 +2109,7 @@ img {
   padding-left: .5rem;
   padding-right: .5rem; }
 
-.ph3 {
+.ph3, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button {
   padding-left: 1rem;
   padding-right: 1rem; }
 
@@ -2626,7 +2626,7 @@ img {
 .pointer:hover, .action-btn:hover, .nav .home-btn-container button:hover,
 .nav .logout-btn-container button:hover,
 .nav .new-btn-container button:hover, .comment .comment-btn-containers .edit-comment-btn-container button:hover,
-.comment .comment-btn-containers .delete-comment-btn-container button:hover, .comment .save-edit-comment-btn-container button:hover, .login .login-dialog .login-btn-container button:hover, .register .register-dialog .register-btn-container button:hover, .new-blog .page-view .new-blog-btn-container button:hover, .blog .page-view .new-comment-container .new-comment-btn-container button:hover, .link:hover, .blog-preview:hover, .shadow-hover {
+.comment .comment-btn-containers .delete-comment-btn-container button:hover, .comment .save-edit-comment-btn-container button:hover, .login .login-dialog .login-btn-container button:hover, .register .register-dialog .register-btn-container button:hover, .new-blog .page-view .new-blog-btn-container button:hover, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button:hover, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button:hover, .blog .page-view .new-comment-container .new-comment-btn-container button:hover, .link:hover, .blog-preview:hover, .shadow-hover {
   cursor: pointer; }
 
 .shadow-hover {
@@ -5634,7 +5634,7 @@ img {
 .title-font, .action-btn, .nav .home-btn-container button,
 .nav .logout-btn-container button,
 .nav .new-btn-container button, .comment .comment-btn-containers .edit-comment-btn-container button,
-.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .link, .blog-preview .blog-title, .login .login-dialog .title, .register .register-dialog .title, .home .title, .new-blog .page-view .title, .blog .page-view .blog-full .blog-title {
+.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .link, .blog-preview .blog-title, .login .login-dialog .title, .register .register-dialog .title, .home .title, .new-blog .page-view .title, .blog .page-view .blog-full .blog-title {
   font-family: 'Montserrat', 'Helvetica', 'Arial', 'sans-serif'; }
 
 .font, .error, .comment .comment-content, .comment .comment-meta, .comment .edit-comment-text-area textarea, .blog-preview .blog-content, .blog-preview .blog-meta, .login .login-dialog .username-input-container input,
@@ -5645,14 +5645,14 @@ img {
 .action-btn, .nav .home-btn-container button,
 .nav .logout-btn-container button,
 .nav .new-btn-container button, .comment .comment-btn-containers .edit-comment-btn-container button,
-.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button {
+.comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button {
   color: #EEA221;
   height: 50px; }
 
 .action-btn:hover, .nav .home-btn-container button:hover,
 .nav .logout-btn-container button:hover,
 .nav .new-btn-container button:hover, .comment .comment-btn-containers .edit-comment-btn-container button:hover,
-.comment .comment-btn-containers .delete-comment-btn-container button:hover, .comment .save-edit-comment-btn-container button:hover, .login .login-dialog .login-btn-container button:hover, .register .register-dialog .register-btn-container button:hover, .new-blog .page-view .new-blog-btn-container button:hover, .blog .page-view .new-comment-container .new-comment-btn-container button:hover {
+.comment .comment-btn-containers .delete-comment-btn-container button:hover, .comment .save-edit-comment-btn-container button:hover, .login .login-dialog .login-btn-container button:hover, .register .register-dialog .register-btn-container button:hover, .new-blog .page-view .new-blog-btn-container button:hover, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button:hover, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button:hover, .blog .page-view .new-comment-container .new-comment-btn-container button:hover {
   color: #2266AA; }
 
 button img {
