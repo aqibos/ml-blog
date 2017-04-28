@@ -5661,6 +5661,10 @@ button img {
 .nav {
   height: 75px; }
 
+.comment .comment-content {
+  white-space: pre-wrap;
+  word-break: break-all; }
+
 .comment .edit-comment-text-area textarea {
   min-height: 50px;
   max-width: 100%; }
