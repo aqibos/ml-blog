@@ -5,3 +5,7 @@
   .blog-content { @extend .font, .pb2; word-break: break-all; }
   .blog-meta { @extend .font, .i; word-break: break-all;; }
 }
+
+.blog-preview:hover {
+  .blog-title { color: $blue-color; }
+}

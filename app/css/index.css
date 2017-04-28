@@ -5674,6 +5674,9 @@ button img {
 .blog-preview .blog-meta {
   word-break: break-all; }
 
+.blog-preview:hover .blog-title {
+  color: #2266AA; }
+
 .login {
   background-image: url("../images/login-background4.jpg");
   background-repeat: no-repeat;
@@ -5698,6 +5701,10 @@ button img {
 
 .new-blog .page-view .blog-content-text-area textarea {
   height: 300px; }
+
+.blog .page-view .blog-full .blog-title {
+  white-space: pre-wrap;
+  word-break: break-word; }
 
 .blog .page-view .blog-full .blog-content {
   white-space: pre-wrap;

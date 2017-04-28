@@ -3,7 +3,7 @@
     @extend .flex, .flex-column, .items-center;
     .blog-full {
       @extend .w-75-l, .w-80-m, .w-90, .mv4, .bb;
-      .blog-title { @extend .f1, .title-font, .b, .tc; }
+      .blog-title { @extend .f1, .title-font, .b, .tc; white-space: pre-wrap; word-break: break-word; }
       .blog-meta{ @extend .f5, .font, .tc, .i, .gray; }
       .blog-content { @extend .font, .w-100, .pv4; white-space: pre-wrap; word-break: break-word; }
       .blog-actions {
