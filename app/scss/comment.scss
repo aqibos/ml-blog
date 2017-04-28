@@ -1,6 +1,6 @@
 .comment {
   @extend .pa2, .ba, .b--light-gray;
-  .comment-content { @extend .font; }
+  .comment-content { @extend .font; white-space: pre-wrap; word-break: break-all; }
   .comment-meta { @extend .font, .f6, .gray, .pa2; }
   .comment-btn-containers {
     @extend .flex;
