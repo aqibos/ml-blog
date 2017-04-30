@@ -5,6 +5,8 @@ import inputBox from './components/inputBox';
 import textArea from './components/textArea';
 import button from './components/button';
 import LoadingView from './components/loading_view';
+import { getItem } from './util/session_storage';
+import { isLoggedIn } from './util/login_helper';
 
 export default function NewBlog({ api }) {
 
@@ -69,9 +71,9 @@ export default function NewBlog({ api }) {
   ]);
 
   const oncreate = () => {
-    blogTitle(''); blogContent(''); apiError(''); m.redraw();
-    isNewBlogLoading(false);
+    blogTitle(''); blogContent(''); apiError(''); isNewBlogLoading(false); m.redraw();
 
+    if (!isLoggedIn()) { m.route.set('/login'); return; }
     const blogId = m.route.param('id');
     if (blogId) loadBlog(blogId);
   };

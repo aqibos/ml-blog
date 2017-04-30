@@ -1,4 +1,6 @@
 import 'babel-polyfill';
+import 'es6-promise/auto'; // IE versions don't support promises
+
 import m from 'mithril';
 import Pusher from 'pusher-js';
 

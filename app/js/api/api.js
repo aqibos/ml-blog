@@ -1,6 +1,5 @@
 import makeApi from './makeApi';
 
-// TODO: Setup live and dev API
 const liveApi = 'https://ml-blog-api.herokuapp.com';
 const devApi = 'https://ml-blog-api-dev.herokuapp.com';
 const localApi = 'http://localhost:1338';

@@ -8,6 +8,7 @@ import button from './components/button';
 import { curry } from 'ramda';
 import { getItem } from './util/session_storage';
 import { dateWithTime } from './util/format';
+import { isLoggedIn } from './util/login_helper';
 
 export default function Blog({ api, pusher }) {
 
@@ -126,7 +127,9 @@ export default function Blog({ api, pusher }) {
 
   const newCommentBox = () => textArea('new-comment', newComment, 'Add a comment');
   const newCommentButton = () => button('new-comment', createComment, 'Add Comment', isNewCommentLoading());
-  const newCommentContainer = () => m('.new-comment-container', [ newCommentBox(), newCommentButton() ]);
+  const newCommentContainer = () => isLoggedIn()
+  ? m('.new-comment-container', [ newCommentBox(), newCommentButton() ])
+  : [];
 
   const pageView = () => m('.page-view', [
     blog(),

@@ -5,23 +5,32 @@ import LoadingView from './components/loading_view';
 import Nav from './components/nav';
 import button from './components/button';
 import { isEmpty } from 'ramda';
+import { isLoggedIn } from './util/login_helper';
 
 export default function Home({ api }) {
   const nav = Nav({ api, onHome: () => { start(0); loadBlogs(0); } });
-  const blogList = stream([]);
   const isLoadingBlogs = stream(true);
   const apiError = stream('');
+  const blogList = stream([]);
   const blogCount = stream(0);
+  const blogLimit = stream(0);
   const start = stream(0);
 
-  const blogs = () => isEmpty(blogList())
-    ? m('.blog-list', 'There are no blogs here.')
-    : m('.blog-list', blogList().map(b => m(BlogPreview(b))));
-
-  // Lifecycle Methods
-
   const newBlog = () => m.route.set('/new-blog');
-  const newButton = () => button('new', newBlog, 'New');
+
+  function loadBlogs(blogStart = 0) {
+    isLoadingBlogs(true); m.redraw();
+    api.blogs('?start=' + blogStart)
+    .then(res => {
+      if (!res.success) throw res.errMsg;
+      blogLimit(res.data.blogLimit);
+      blogCount(res.data.blogCount);
+      blogList(res.data.blogs);
+      isLoadingBlogs(false);
+      m.redraw();
+    })
+    .catch(err => { console.log('catch', err); isLoadingBlogs(false); apiError(err); m.redraw(); });
+  }
 
   const viewOlder = () => {
     isLoadingBlogs(true); m.redraw();
@@ -35,36 +44,36 @@ export default function Home({ api }) {
     loadBlogs(start);
   }
 
-  const viewOlderButton = () => ((start() + 1) * 20) < blogCount()
-  ? button('view-older', viewOlder, 'View Older →') : [];
+  // UI Helpers
+  const newBlogButton = () => isLoggedIn() ? button('new', newBlog, 'New') : [];
+
+  const viewOlderButton = () => {
+    // console.log('Blog Limit', blogLimit());
+    // console.log('Blog Count', blogCount());
+    const moreBlogsLeft = ((start() + 1) * blogLimit()) < blogCount();
+    return moreBlogsLeft ? button('view-older', viewOlder, 'View Older →') : [];
+  }
 
   const viewNewerButton = () => start() > 0
   ? button('view-newer', viewNewer, '← View Newer') : [];
 
-  function loadBlogs(blogStart = 0) {
-    isLoadingBlogs(true); m.redraw();
-    api.blogs('?start=' + blogStart)
-    .then(res => {
-      if (!res.success) throw res.errMsg;
-      isLoadingBlogs(false);
-      blogCount(res.data.blogCount);
-      blogList(res.data.blogs);
-      m.redraw();
-    })
-    .catch(err => { console.log('catch', err); isLoadingBlogs(false); apiError(err); m.redraw(); });
-  }
+  const blogs = () => isEmpty(blogList())
+    ? m('.blog-list', 'There are no blogs here.')
+    : m('.blog-list', blogList().map(b => m(BlogPreview(b))));
+
+  const pageView = () => m('.page-view', [
+    m('.title', 'Blogs'),
+    newBlogButton(),
+    blogs(),
+    m('.pagination', [ viewNewerButton(), viewOlderButton() ])
+  ]);
+
+  // Lifecycle Methods
 
   const oncreate = () => {
     start(0); m.redraw();
     loadBlogs(start());
   };
-
-  const pageView = () => m('.page-view', [
-    m('.title', 'Blogs'),
-    newButton(),
-    blogs(),
-    m('.pagination', [ viewNewerButton(), viewOlderButton() ])
-  ]);
 
   const view = () => {
     console.log('view', start(), blogCount());

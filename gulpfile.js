@@ -10,7 +10,7 @@ const source = require('vinyl-source-stream');
 gulp.task('watch', ['browserSync', 'sass'], function() {
   gulp.watch('app/scss/**/*.scss', ['sass']);
   gulp.watch('index.html', browserSync.reload);
-  gulp.watch('app/js/**/*.js', ['build'], browserSync.reload); // TODO: Check if this necessary, given line below?
+  gulp.watch('app/js/**/*.js', ['build'], browserSync.reload);
   gulp.watch('app/js/**/**/*.js', ['build'], browserSync.reload);
 });
 
