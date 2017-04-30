@@ -12,12 +12,14 @@ import Blog from './blog';
 import NewBlog from './new_blog';
 
 const pusher = new Pusher('b32a71dbca252fd8e791', { encrypted: true });
+const home = Home({ api });
 
 m.route(document.querySelector('#app'), '/', {
   '/': Login({ api }),
   '/login': Login({ api }),
   '/register': Register({ api }),
-  '/home': Home({ api }),
+  '/home': { view: () => m(home) },
+  // '/home/:st': { view: () => m(home) },
   '/blogs': Blog({ api, pusher }),
   '/new-blog': NewBlog({ api })
 });

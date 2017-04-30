@@ -4,7 +4,6 @@ import button from './button';
 import { removeItem } from '../util/session_storage';
 
 export default function Nav({ api, onHome }) {
-
   const isLogoutLoading = stream(false);
   const apiError = stream('');
 
@@ -17,7 +16,7 @@ export default function Nav({ api, onHome }) {
     })
     .catch(err => { console.log(err); apiError(err); m.redraw(); })
   }
-  const defaultOnHome = () => m.route.set('/home?st=0');
+  const defaultOnHome = () => m.route.set('/home/0');
   const toHome = onHome || defaultOnHome;
 
   const homeButton = () => button('home', toHome, 'Home');

@@ -273,7 +273,7 @@ img {
   border-left-width: 1px; }
 
 .bn, .clear-btn, .action-btn, .nav .home-btn-container button,
-.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .view-older-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .inline-btn, .comment .comment-btn-containers .edit-comment-btn-container button,
+.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .pagination .view-older-btn-container button, .home .pagination .view-newer-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .inline-btn, .comment .comment-btn-containers .edit-comment-btn-container button,
 .comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button {
   border-style: none;
   border-width: 0; }
@@ -471,7 +471,7 @@ img {
   border-radius: .25rem; }
 
 .br3, .action-btn, .nav .home-btn-container button,
-.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .view-older-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .inline-btn, .comment .comment-btn-containers .edit-comment-btn-container button,
+.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .pagination .view-older-btn-container button, .home .pagination .view-newer-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .inline-btn, .comment .comment-btn-containers .edit-comment-btn-container button,
 .comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button {
   border-radius: .5rem; }
 
@@ -688,7 +688,7 @@ img {
   table-layout: fixed;
   width: 100%; }
 
-.flex, .nav, .loading-view, .comment .comment-btn-containers, .login, .login .login-dialog, .register, .register .register-dialog, .home .page-view, .home .new-btn-container, .home .blog-list, .new-blog .page-view, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view, .blog .page-view .blog-full .blog-actions, .blog .page-view .blog-comment-list, .blog .page-view .new-comment-container {
+.flex, .nav, .loading-view, .comment .comment-btn-containers, .login, .login .login-dialog, .register, .register .register-dialog, .home .page-view, .home .new-btn-container, .home .blog-list, .home .pagination, .new-blog .page-view, .new-blog .page-view .title, .new-blog .page-view .blog-title-input-container, .new-blog .page-view .blog-content-text-area, .blog .page-view, .blog .page-view .blog-full .blog-actions, .blog .page-view .blog-comment-list, .blog .page-view .new-comment-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
@@ -1533,7 +1533,7 @@ img {
   background-color: #fff; }
 
 .bg-transparent, .clear-btn, .action-btn, .nav .home-btn-container button,
-.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .view-older-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .inline-btn, .comment .comment-btn-containers .edit-comment-btn-container button,
+.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .pagination .view-older-btn-container button, .home .pagination .view-newer-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .inline-btn, .comment .comment-btn-containers .edit-comment-btn-container button,
 .comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button, .link {
   background-color: transparent; }
 
@@ -1946,7 +1946,7 @@ img {
   padding: .25rem; }
 
 .pa2, .action-btn, .nav .home-btn-container button,
-.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .view-older-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .inline-btn, .comment .comment-btn-containers .edit-comment-btn-container button,
+.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .pagination .view-older-btn-container button, .home .pagination .view-newer-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .inline-btn, .comment .comment-btn-containers .edit-comment-btn-container button,
 .comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button, .comment, .comment .comment-meta, .comment .edit-comment-text-area textarea, .login .login-dialog .title, .login .login-dialog .username-input-container input,
 .login .login-dialog .password-input-container input, .register .register-dialog .title, .register .register-dialog .username-input-container input,
 .register .register-dialog .password-input-container input, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .error, .blog .page-view .new-comment-container .new-comment-text-area textarea {
@@ -2112,7 +2112,7 @@ img {
   padding-right: 1rem; }
 
 .ph4, .action-btn, .nav .home-btn-container button,
-.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .view-older-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button {
+.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .pagination .view-older-btn-container button, .home .pagination .view-newer-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button {
   padding-left: 2rem;
   padding-right: 2rem; }
 
@@ -2134,7 +2134,7 @@ img {
 .ma1 {
   margin: .25rem; }
 
-.ma2, .home .view-older-btn-container button, .new-blog .page-view .new-blog-btn-container button {
+.ma2, .home .pagination .view-older-btn-container button, .home .pagination .view-newer-btn-container button, .new-blog .page-view .new-blog-btn-container button {
   margin: .5rem; }
 
 .ma3 {
@@ -2623,7 +2623,7 @@ img {
   transform: scale(0.95); }
 
 .pointer:hover, .action-btn:hover, .nav .home-btn-container button:hover,
-.nav .logout-btn-container button:hover, .login .login-dialog .login-btn-container button:hover, .register .register-dialog .register-btn-container button:hover, .home .new-btn-container button:hover, .home .view-older-btn-container button:hover, .new-blog .page-view .new-blog-btn-container button:hover, .blog .page-view .new-comment-container .new-comment-btn-container button:hover, .inline-btn:hover, .comment .comment-btn-containers .edit-comment-btn-container button:hover,
+.nav .logout-btn-container button:hover, .login .login-dialog .login-btn-container button:hover, .register .register-dialog .register-btn-container button:hover, .home .new-btn-container button:hover, .home .pagination .view-older-btn-container button:hover, .home .pagination .view-newer-btn-container button:hover, .new-blog .page-view .new-blog-btn-container button:hover, .blog .page-view .new-comment-container .new-comment-btn-container button:hover, .inline-btn:hover, .comment .comment-btn-containers .edit-comment-btn-container button:hover,
 .comment .comment-btn-containers .delete-comment-btn-container button:hover, .comment .save-edit-comment-btn-container button:hover, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button:hover, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button:hover, .link:hover, .blog-preview:hover, .shadow-hover {
   cursor: pointer; }
 
@@ -5630,7 +5630,7 @@ img {
     vertical-align: bottom; } }
 
 .title-font, .action-btn, .nav .home-btn-container button,
-.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .view-older-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .inline-btn, .comment .comment-btn-containers .edit-comment-btn-container button,
+.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .pagination .view-older-btn-container button, .home .pagination .view-newer-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .inline-btn, .comment .comment-btn-containers .edit-comment-btn-container button,
 .comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button, .link, .blog-preview .blog-title, .login .login-dialog .title, .register .register-dialog .title, .home .title, .new-blog .page-view .title, .blog .page-view .blog-full .blog-title {
   font-family: 'Montserrat', 'Helvetica', 'Arial', 'sans-serif'; }
 
@@ -5640,13 +5640,13 @@ img {
   font-family: 'Avenir', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'; }
 
 .action-btn, .nav .home-btn-container button,
-.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .view-older-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button {
+.nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .pagination .view-older-btn-container button, .home .pagination .view-newer-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button {
   background-color: #EEA221;
   color: black;
   height: 50px; }
 
 .action-btn:hover, .nav .home-btn-container button:hover,
-.nav .logout-btn-container button:hover, .login .login-dialog .login-btn-container button:hover, .register .register-dialog .register-btn-container button:hover, .home .new-btn-container button:hover, .home .view-older-btn-container button:hover, .new-blog .page-view .new-blog-btn-container button:hover, .blog .page-view .new-comment-container .new-comment-btn-container button:hover {
+.nav .logout-btn-container button:hover, .login .login-dialog .login-btn-container button:hover, .register .register-dialog .register-btn-container button:hover, .home .new-btn-container button:hover, .home .pagination .view-older-btn-container button:hover, .home .pagination .view-newer-btn-container button:hover, .new-blog .page-view .new-blog-btn-container button:hover, .blog .page-view .new-comment-container .new-comment-btn-container button:hover {
   color: #2266AA; }
 
 .inline-btn, .comment .comment-btn-containers .edit-comment-btn-container button,

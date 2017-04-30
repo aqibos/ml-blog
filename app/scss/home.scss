@@ -13,6 +13,10 @@
     .blog-preview { @extend .w-100; }
   }
 
-  .view-older-btn-container button { @extend .action-btn, .ma2; }
+  .pagination {
+    @extend .flex;
+    .view-older-btn-container button { @extend .action-btn, .ma2; }
+    .view-newer-btn-container button { @extend .action-btn, .ma2; }
+  }
 
 }

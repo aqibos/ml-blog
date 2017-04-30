@@ -36,8 +36,8 @@ export default function Login({ api }) {
   const loginDialog = () => m('.login-dialog', [
     m('.title', 'Sign In'),
     m('.error', apiError()),
-    inputBox('username', username),
-    inputBox('password', password, 'password'),
+    inputBox('username', username, 'text', 'Username'),
+    inputBox('password', password, 'password', 'Password'),
     button('login', login, 'Login', isLoginLoading()),
     link('register', register, 'Register')
   ]);

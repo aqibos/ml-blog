@@ -7,10 +7,12 @@ import button from './components/button';
 import { isEmpty } from 'ramda';
 
 export default function Home({ api }) {
-  const nav = Nav({ api, onHome: loadBlogs });
+  const nav = Nav({ api, onHome: () => { start(0); loadBlogs(0); } });
   const blogList = stream([]);
   const isLoadingBlogs = stream(true);
   const apiError = stream('');
+  const blogCount = stream(0);
+  const start = stream(0);
 
   const blogs = () => isEmpty(blogList())
     ? m('.blog-list', 'There are no blogs here.')
@@ -23,50 +25,54 @@ export default function Home({ api }) {
 
   const viewOlder = () => {
     isLoadingBlogs(true); m.redraw();
-    let blogStart = m.route.param('st');
-    console.log('Blog Start Before', blogStart, Number.isNaN(parseInt(blogStart)));
-
-    if (blogStart) {
-      if (Number.isNaN(parseInt(blogStart))) blogStart = 1;
-      else blogStart = parseInt(blogStart) + 1;
-      m.route.set('/home?st=' + blogStart);
-    } else {
-      m.route.set('/home?st=' + 1);
-    }
-    loadBlogs(blogStart);
+    start(start() + 1);
+    loadBlogs(start);
   }
-  const viewOlderButton = () => blogList().length === 20
-  ? button('view-older', viewOlder, 'View Older') : [];
+
+  const viewNewer = () => {
+    isLoadingBlogs(true); m.redraw();
+    if (start() > 0) start(start() - 1);
+    loadBlogs(start);
+  }
+
+  const viewOlderButton = () => ((start() + 1) * 20) < blogCount()
+  ? button('view-older', viewOlder, 'View Older →') : [];
+
+  const viewNewerButton = () => start() > 0
+  ? button('view-newer', viewNewer, '← View Newer') : [];
 
   function loadBlogs(blogStart = 0) {
-    m.route.set('/home?st=' + blogStart);
     isLoadingBlogs(true); m.redraw();
     api.blogs('?start=' + blogStart)
     .then(res => {
       if (!res.success) throw res.errMsg;
       isLoadingBlogs(false);
-      blogList(res.data);
+      blogCount(res.data.blogCount);
+      blogList(res.data.blogs);
       m.redraw();
     })
     .catch(err => { console.log('catch', err); isLoadingBlogs(false); apiError(err); m.redraw(); });
   }
 
   const oncreate = () => {
-    let blogStart = m.route.param('st');
-    loadBlogs(blogStart);
+    start(0); m.redraw();
+    loadBlogs(start());
   };
 
   const pageView = () => m('.page-view', [
     m('.title', 'Blogs'),
     newButton(),
     blogs(),
-    viewOlderButton()
+    m('.pagination', [ viewNewerButton(), viewOlderButton() ])
   ]);
 
-  const view = () => m('.home', [
-    m(nav),
-    isLoadingBlogs() ? LoadingView() : pageView()
-  ]);
+  const view = () => {
+    console.log('view', start(), blogCount());
+    return m('.home', [
+      m(nav),
+      isLoadingBlogs() ? LoadingView() : pageView()
+    ])
+  };
 
   return { oncreate, view };
 }
