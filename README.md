@@ -8,12 +8,14 @@ Relevant projects are publicly available in Github:
 
 # Live Demo
 
+**Demos require cookies to be accepted from third-party sites, since the API and the application are hosted on different URLs!**
+
 Demo applications are hosted on Heroku.
 
-* [Live Production Frontend](https://ml-blog.herokuapp.com/)
-* [Live Production Backend](https://ml-blog-api.herokuapp.com/)
-* [Live Development Frontend](https://ml-blog-dev.herokuapp.com/)
-* [Live Development Backend](https://ml-blog-api-dev.herokuapp.com/)
+* [Production Frontend](https://ml-blog.herokuapp.com/)
+* [Production Backend](https://ml-blog-api.herokuapp.com/)
+* [Development Frontend](https://ml-blog-dev.herokuapp.com/)
+* [Development Backend](https://ml-blog-api-dev.herokuapp.com/)
 
 ## Local Installation (_ml-blog_)
 
@@ -29,7 +31,7 @@ _Please note: **Node.js** and **npm** are required to run this project. **The ml
 
 _Please note: **Node.js** and **npm** are required to run this project._
 
-**This project requires certain environment variables to be set, prior to running (e.g., database credentials, pusher app keys, etc.). Please request access from the developer of this application at `ashah023@fiu.edu`. Thank you.**
+**This project requires certain environment variables to be set, prior to running (e.g., database credentials, pusher app keys, etc.). Please request access from the developer of this application at `ashah023@fiu.edu` or use your own. Thank you.**
 
 
 1. Download the project, either via the [browser](https://github.com/ashah023/ml-blog-api) or using using the comamnd line, using `git clone https://github.com/ashah023/ml-blog-api.git`.
@@ -58,7 +60,7 @@ The application was built from scratch using a three-tier architecture:
 
 The presentation layer is single-page application built using a standard MVC design pattern with **[MithrilJS](https://mithril.js.org/)**. MithrilJS allows for vanilla javascript syntax and supports a wide variety of browsers. Mithril also allows for re-usable components, similar to other frameworks.
 
-All styling is done using **Sass** that is pre-processed into CSS. The [Tachyons](http://tachyons.io/) framework in conjuction with Sass inheritance was used to style the application. Tachyons simply provides shortcuts for common CSS styling. For example instead of writing `border: 1px solid black;`, you can simply write `.ba;`, which stands for "border all". Also, instead of polluting the HTML with all of the styling, the Tachyon shortcuts are simply extended in the relevant stylesheet. The styling is also ready for mobile devices.
+All styling is done using **Sass** that is pre-processed into CSS. The [Tachyons](http://tachyons.io/) shortcuts have been used to style the application. Tachyons simply provides shortcuts for common CSS styling. For example instead of writing `border: 1px solid black;`, you can simply write `.ba;`, which stands for "border all". Also, instead of polluting the HTML with all of the styling, the Tachyons shortcuts are simply extended in the relevant stylesheet using Sass inheritance. The styling is also ready for mobile devices.
 
 Live data loading is avaiable via [Pusher](https://pusher.com/). If an person is viewing a blog and a new comment is made, the comment will automatically be displayed.
 
@@ -113,7 +115,9 @@ With more time, I would have liked to do the following:
 * Add image support
 * Add notifications (via email) for new comments
 * Add a newsletter subscription
-* Adding administrative roles
+* Add administrative roles
+* Add more robust error handling
+* Encapsulate domain types (e.g., Blog, Comment) in classes and use them inside both projects.
 
 ## Contact
 
