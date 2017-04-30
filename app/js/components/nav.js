@@ -16,7 +16,7 @@ export default function Nav({ api, onHome }) {
     })
     .catch(err => { console.log(err); apiError(err); m.redraw(); })
   }
-  const defaultOnHome = () => m.route.set('/home/0');
+  const defaultOnHome = () => m.route.set('/home');
   const toHome = onHome || defaultOnHome;
 
   const homeButton = () => button('home', toHome, 'Home');
