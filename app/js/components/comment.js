@@ -45,7 +45,6 @@ export default function Comment({ params, api, editFn, deleteFn }) {
   ]);
 
   const view = () => {
-    console.log('Is Editing', username);
     return comment()
       ? isEditing() ? editView() : readView()
       : [];

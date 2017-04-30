@@ -101,7 +101,7 @@ export default function Blog({ api, pusher }) {
 
   const listenOnPusher = blogId => {
     const channel = pusher.subscribe('blog-' + blogId);
-    channel.bind('new-comment', () => loadComments(blogId));
+    channel.bind('new-comment', function() { loadComments(blogId); });
   }
 
   // UI helpers
@@ -142,6 +142,7 @@ export default function Blog({ api, pusher }) {
     apiError(''); isBlogLoading(true); m.redraw();
 
     const blogId = m.route.param('id');
+    listenOnPusher(blogId);
     if (blogId) { loadBlog(blogId); }
     else m.route.set('/home');
   };
