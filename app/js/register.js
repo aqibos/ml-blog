@@ -38,8 +38,8 @@ export default function Register({ api }) {
   const registerDialog = () => m('.register-dialog', [
     m('.title', 'Register Account'),
     m('.error', apiError()),
-    inputBox('username', newUsername),
-    inputBox('password', newPassword, 'password'),
+    inputBox('username', newUsername, 'text', 'Username'),
+    inputBox('password', newPassword, 'password', 'Password'),
     button('register', register, 'Register', isRegisterLoading()),
     link('login', login, 'Already have an account?')
   ]);
