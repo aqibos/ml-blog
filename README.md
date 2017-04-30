@@ -17,12 +17,13 @@ Demo applications are hosted on Heroku.
 
 ## Local Installation (_ml-blog_)
 
-_Please note: **Node.js** and **npm** are required to run this project. **The ml-blog-api project requires certain enviroment variables to set, therefore the local ml-blog project has been configured to run against the development API. This can be changed in the `app/js/api/api.js` file (line 12).**._
+_Please note: **Node.js** and **npm** are required to run this project. **The ml-blog-api project requires certain enviroment variables to set, therefore the local ml-blog project has been configured to run against the development API. This can be changed in the `app/js/api/api.js` file (line 12).**_
 
 1. Download the project, either via the [browser](https://github.com/ashah023/ml-blog) or using the command line, using `git clone https://github.com/ashah023/ml-blog.git`.
 2. Install dependencies using `npm install` in the directory the project was downloaded in.
-3. Run `npm start`.
-4. Navigate to `http://localhost:5000/#!/`.
+3. Run `gulp build`
+4. Run `npm start`.
+5. Navigate to `http://localhost:5000/#!/`.
 
 ## Local Installation (_ml-blog-api_)
 
@@ -31,11 +32,11 @@ _Please note: **Node.js** and **npm** are required to run this project._
 **This project requires certain environment variables to be set, prior to running (e.g., database credentials, pusher app keys, etc.). Please request access from the developer of this application at `ashah023@fiu.edu`. Thank you.**
 
 
-
 1. Download the project, either via the [browser](https://github.com/ashah023/ml-blog-api) or using using the comamnd line, using `git clone https://github.com/ashah023/ml-blog-api.git`.
 2. Install dependencies using `npm install` in the directory the project was downloaded in.
-3. Run `npm start`.
-4. The server is now is running at `http://localhost:1338`.
+3. Run `npm run build`.
+4. Run `npm start`.
+5. The server is now is running at `http://localhost:1338`.
 
 ## Development Installation (_ml-blog_)
 1. Follow steps 1 and 2 for Local Installation (_ml-blog_)
@@ -113,3 +114,7 @@ With more time, I would have liked to do the following:
 * Add notifications (via email) for new comments
 * Add a newsletter subscription
 * Adding administrative roles
+
+## Contact
+
+For any questions, please contact the developer at `ashah023@fiu.edu`. Thank you.
