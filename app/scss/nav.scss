@@ -3,7 +3,7 @@
   height: 75px;
 
   .home-btn-container { @extend .pl3; }
-  .logout-btn-container { @extend .pr3; }
+  .logout-btn-container, .login-btn-container { @extend .pr3; }
   .login-btn-container button,
   .home-btn-container button,
   .logout-btn-container button {

@@ -2005,7 +2005,7 @@ img {
 .pr2 {
   padding-right: .5rem; }
 
-.pr3, .nav .logout-btn-container {
+.pr3, .nav .logout-btn-container, .nav .login-btn-container {
   padding-right: 1rem; }
 
 .pr4 {
