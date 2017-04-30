@@ -88,7 +88,7 @@ The logic layer is further abstracted into 3 layers:
 
 #### Code
 
-The logic layer code is contained in the [ml-blog-api](https://github.com/ashah023/ml-blog-api) project. It is written using ES2016 syntax and is transpiled using babel.
+The logic layer code is contained in the [ml-blog-api](https://github.com/ashah023/ml-blog-api) project. It is written using ES2016 syntax and is transpiled using babel. The database files can be found in the `database/` directory. The schema used to create the database is in `database/createDatabase.js`.
 
 #### File Structure
 
