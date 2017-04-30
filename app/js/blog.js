@@ -7,6 +7,7 @@ import textArea from './components/textArea';
 import button from './components/button';
 import { curry } from 'ramda';
 import { getItem } from './util/session_storage';
+import { dateWithTime } from './util/format';
 
 export default function Blog({ api }) {
 
@@ -111,7 +112,7 @@ export default function Blog({ api }) {
 
   const blog = () => m('.blog-full', [
     m('.blog-title', blogDetails().title),
-    m('.blog-meta', 'Posted by ' + blogDetails().username + ' on ' + new Date(blogDetails().datetime).toDateString()),
+    m('.blog-meta', 'Posted by ' + blogDetails().username + ' on ' + dateWithTime(blogDetails().datetime)),
     m('.blog-content', blogDetails().content),
     blogActions()
   ]);

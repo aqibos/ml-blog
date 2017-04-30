@@ -15,13 +15,18 @@ body { @extend .mb5; }
 .clear-btn { @extend .bn, .bg-transparent; }
 
 .action-btn {
-  @extend .clear-btn, .pa2, .title-font, .pointer;
+  @extend .clear-btn, .pa2, .ph4, .title-font, .pointer, .br3;
+  background-color: $yellow-color;
+  color: black;
+  height: 50px;
+}
+.action-btn:hover { color: $blue-color; }
+.inline-btn {
+  @extend .clear-btn, .pa2, .title-font, .pointer, .br3;
   color: $yellow-color;
   height: 50px;
 }
-.action-btn:hover {
-  color: $blue-color;
-}
+.inline-btn:hover { color: $blue-color; }
 
 .link { @extend .bg-transparent, .underline, .gray, .title-font, .pointer, .f6; }
 

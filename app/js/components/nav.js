@@ -3,7 +3,7 @@ import stream from 'mithril/stream';
 import button from './button';
 import { removeItem } from '../util/session_storage';
 
-export default function Nav({ api }) {
+export default function Nav({ api, onHome }) {
 
   const isLogoutLoading = stream(false);
   const apiError = stream('');
@@ -17,15 +17,13 @@ export default function Nav({ api }) {
     })
     .catch(err => { console.log(err); apiError(err); m.redraw(); })
   }
-  const toHome = () => m.route.set('/home');
-
-  const newBlog = () => m.route.set('/new-blog');
+  const defaultOnHome = () => m.route.set('/home?st=0');
+  const toHome = onHome || defaultOnHome;
 
   const homeButton = () => button('home', toHome, 'Home');
   const logoutButton = () => button('logout', logout, 'Logout', isLogoutLoading());
-  const newButton = () => button('new', newBlog, 'New');
 
-  const view = () => m('.nav', [ homeButton(), newButton(), logoutButton() ]);
+  const view = () => m('.nav', [ homeButton(), logoutButton() ]);
 
   return { view };
 

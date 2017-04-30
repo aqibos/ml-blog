@@ -5,12 +5,12 @@
   .comment-btn-containers {
     @extend .flex;
     .edit-comment-btn-container button,
-    .delete-comment-btn-container button { @extend .action-btn; }
+    .delete-comment-btn-container button { @extend .inline-btn; }
   }
 
   .edit-comment-text-area textarea {
     @extend .w-100, .font, .pa2; min-height: 50px; max-width: 100%;
   }
-  .save-edit-comment-btn-container button { @extend .action-btn; }
+  .save-edit-comment-btn-container button { @extend .inline-btn; }
 
 }

@@ -3,6 +3,7 @@ import stream from 'mithril/stream';
 import button from './button';
 import textArea from './textArea';
 import { getItem } from '../util/session_storage';
+import { dateWithTime } from '../util/format';
 
 export default function Comment({ params, api, editFn, deleteFn }) {
   const commentId = params.id;
@@ -39,7 +40,7 @@ export default function Comment({ params, api, editFn, deleteFn }) {
 
   const readView = () => m('.comment', [
     m('.comment-content', comment().content),
-    m('.comment-meta', 'Posted by ' + comment().username + ' on ' + new Date(comment().datetime).toDateString()),
+    m('.comment-meta', 'Posted by ' + comment().username + ' on ' + dateWithTime(comment().datetime)),
     commentActions()
   ]);
 

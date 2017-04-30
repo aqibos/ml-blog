@@ -8,8 +8,8 @@
       .blog-content { @extend .font, .w-100, .pv4; white-space: pre-wrap; word-break: break-word; }
       .blog-actions {
         @extend .flex;
-        .edit-blog-btn-container button { @extend .action-btn, .ph3; }
-        .delete-blog-btn-container button { @extend .action-btn, .ph3; }
+        .edit-blog-btn-container button { @extend .inline-btn, .ph3; }
+        .delete-blog-btn-container button { @extend .inline-btn, .ph3; }
       }
     }
     .error { @extend .pa2, .pt3; }

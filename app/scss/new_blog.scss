@@ -6,6 +6,6 @@
     .blog-title-input-container input { @extend .w-100, .pa2, .font; }
     .blog-content-text-area { @extend .flex, .justify-center, .w-75-l, .w-80-m, .w-90;; }
     .blog-content-text-area textarea { @extend .w-100, .pa2, .font; height: 300px; }
-    .new-blog-btn-container button { @extend .action-btn, .white, .pa2; }
+    .new-blog-btn-container button { @extend .action-btn, .white, .pa2, .ma2; }
   }
 }

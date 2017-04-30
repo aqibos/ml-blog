@@ -63,8 +63,8 @@ export default function NewBlog({ api }) {
   const pageView = () => m('.page-view', [
     m('.title', 'Create A New Blog'),
     m('.error', apiError()),
-    inputBox('blog-title', blogTitle),
-    textArea('blog-content', blogContent),
+    inputBox('blog-title', blogTitle, 'text', 'Blog Title'),
+    textArea('blog-content', blogContent, 'Blog Content'),
     button('new-blog', isEditingBlog() ? updateBlog : createBlog, 'Save Blog',isNewBlogLoading())
   ]);
 

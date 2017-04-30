@@ -3,11 +3,16 @@
   .page-view { @extend .flex, .flex-column, .items-center; }
 
   .title { @extend .f1, .title-font, .b, .tc, .ma4; }
+  .new-btn-container {
+    @extend .flex, .justify-end, .w-75-l, .w-80-m, .w-90;
+  }
+  .new-btn-container button { @extend .action-btn; }
 
   .blog-list {
     @extend .w-75-l, .w-80-m, .w-90, .flex, .flex-column, .items-center, .justify-center;
-
     .blog-preview { @extend .w-100; }
   }
+
+  .view-older-btn-container button { @extend .action-btn, .ma2; }
 
 }
