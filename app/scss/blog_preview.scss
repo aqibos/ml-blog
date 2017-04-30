@@ -1,9 +1,9 @@
 .blog-preview {
   @extend .bb, .b--light-gray, .pa4, .pv3, .pointer;
 
-  .blog-title { @extend .f2, .title-font, .pb2, .b; word-break: break-word; }
-  .blog-content { @extend .font, .pb2; word-break: break-all; }
-  .blog-meta { @extend .font, .i; word-break: break-all;; }
+  .blog-title { @extend .f2, .title-font, .pb2, .b; white-space: pre-wrap; word-break: break-word; }
+  .blog-content { @extend .font, .pb2; white-space: pre-wrap; word-break: break-word; }
+  .blog-meta { @extend .font, .i; white-space: pre-wrap; word-break: break-word; }
 }
 
 .blog-preview:hover {

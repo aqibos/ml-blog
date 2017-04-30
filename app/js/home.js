@@ -4,6 +4,7 @@ import BlogPreview from './components/blog-preview';
 import LoadingView from './components/loading_view';
 import Nav from './components/nav';
 import button from './components/button';
+import { isEmpty } from 'ramda';
 
 export default function Home({ api }) {
   const nav = Nav({ api, onHome: loadBlogs });
@@ -11,9 +12,9 @@ export default function Home({ api }) {
   const isLoadingBlogs = stream(true);
   const apiError = stream('');
 
-  const blogs = () => m('.blog-list',
-    blogList().map(b => m(BlogPreview(b)))
-  );
+  const blogs = () => isEmpty(blogList())
+    ? m('.blog-list', 'There are no blogs here.')
+    : m('.blog-list', blogList().map(b => m(BlogPreview(b))));
 
   // Lifecycle Methods
 

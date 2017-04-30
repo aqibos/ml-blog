@@ -1948,8 +1948,8 @@ img {
 .pa2, .action-btn, .nav .home-btn-container button,
 .nav .logout-btn-container button, .login .login-dialog .login-btn-container button, .register .register-dialog .register-btn-container button, .home .new-btn-container button, .home .view-older-btn-container button, .new-blog .page-view .new-blog-btn-container button, .blog .page-view .new-comment-container .new-comment-btn-container button, .inline-btn, .comment .comment-btn-containers .edit-comment-btn-container button,
 .comment .comment-btn-containers .delete-comment-btn-container button, .comment .save-edit-comment-btn-container button, .blog .page-view .blog-full .blog-actions .edit-blog-btn-container button, .blog .page-view .blog-full .blog-actions .delete-blog-btn-container button, .comment, .comment .comment-meta, .comment .edit-comment-text-area textarea, .login .login-dialog .title, .login .login-dialog .username-input-container input,
-.login .login-dialog .password-input-container input, .login .login-dialog .login-btn-container, .register .register-dialog .title, .register .register-dialog .username-input-container input,
-.register .register-dialog .password-input-container input, .register .register-dialog .register-btn-container, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .error, .blog .page-view .new-comment-container .new-comment-text-area textarea {
+.login .login-dialog .password-input-container input, .register .register-dialog .title, .register .register-dialog .username-input-container input,
+.register .register-dialog .password-input-container input, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .error, .blog .page-view .new-comment-container .new-comment-text-area textarea {
   padding: .5rem; }
 
 .pa3 {
@@ -2071,7 +2071,7 @@ img {
   padding-top: .25rem;
   padding-bottom: .25rem; }
 
-.pv2 {
+.pv2, .login .login-dialog .login-btn-container, .register .register-dialog .register-btn-container {
   padding-top: .5rem;
   padding-bottom: .5rem; }
 
@@ -5636,7 +5636,7 @@ img {
 
 .font, .error, .comment .comment-content, .comment .comment-meta, .comment .edit-comment-text-area textarea, .blog-preview .blog-content, .blog-preview .blog-meta, .login .login-dialog .username-input-container input,
 .login .login-dialog .password-input-container input, .register .register-dialog .username-input-container input,
-.register .register-dialog .password-input-container input, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .blog-full .blog-meta, .blog .page-view .blog-full .blog-content, .blog .page-view .comment-title, .blog .page-view .new-comment-container .new-comment-text-area textarea {
+.register .register-dialog .password-input-container input, .home .blog-list, .new-blog .page-view .blog-title-input-container input, .new-blog .page-view .blog-content-text-area textarea, .blog .page-view .blog-full .blog-meta, .blog .page-view .blog-full .blog-content, .blog .page-view .comment-title, .blog .page-view .new-comment-container .new-comment-text-area textarea {
   font-family: 'Avenir', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'; }
 
 .action-btn, .nav .home-btn-container button,
@@ -5673,13 +5673,16 @@ button img {
   max-width: 100%; }
 
 .blog-preview .blog-title {
+  white-space: pre-wrap;
   word-break: break-word; }
 
 .blog-preview .blog-content {
-  word-break: break-all; }
+  white-space: pre-wrap;
+  word-break: break-word; }
 
 .blog-preview .blog-meta {
-  word-break: break-all; }
+  white-space: pre-wrap;
+  word-break: break-word; }
 
 .blog-preview:hover .blog-title {
   color: #2266AA; }

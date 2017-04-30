@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-  
+
   .login-dialog {
     @extend .flex, .flex-column, .items-center;
     @extend .bg-white;
@@ -12,7 +12,7 @@
     width: 400px;
 
     .title { @extend .title-font, .f2, .tc, .pa2, .pv4; color: $yellow-color;  }
-    .username-input-container, 
+    .username-input-container,
     .password-input-container {
       @extend .w-80;
       input {
@@ -20,7 +20,7 @@
       }
     }
     .login-btn-container {
-      @extend .w-80, .pa2;
+      @extend .w-80, .pv2;
       button { @extend .w-100, .action-btn; }
     }
   }

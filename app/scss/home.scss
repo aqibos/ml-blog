@@ -9,7 +9,7 @@
   .new-btn-container button { @extend .action-btn; }
 
   .blog-list {
-    @extend .w-75-l, .w-80-m, .w-90, .flex, .flex-column, .items-center, .justify-center;
+    @extend .w-75-l, .w-80-m, .w-90, .flex, .flex-column, .items-center, .justify-center, .font;
     .blog-preview { @extend .w-100; }
   }
 

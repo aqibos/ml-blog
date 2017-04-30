@@ -42,6 +42,7 @@
     "mithril": "^1.1.1",
     "moment": "^2.18.1",
     "path": "^0.12.7",
+    "pusher-js": "^4.1.0",
     "ramda": "^0.23.0",
     "vinyl-source-stream": "^1.1.0",
     "whatwg-fetch": "^2.0.3"

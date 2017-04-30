@@ -9,7 +9,7 @@ import { curry } from 'ramda';
 import { getItem } from './util/session_storage';
 import { dateWithTime } from './util/format';
 
-export default function Blog({ api }) {
+export default function Blog({ api, pusher }) {
 
   // State
   const nav = Nav({ api });
@@ -99,10 +99,15 @@ export default function Blog({ api }) {
     api.editComment, { commentId, content }, loadingPropFn, loadingPropFn
   );
 
+  const listenOnPusher = blogId => {
+    const channel = pusher.subscribe('blog-' + blogId);
+    channel.bind('new-comment', () => loadComments(blogId));
+  }
+
   // UI helpers
 
   const blogActions = () => {
-    const isOwner = blogDetails().username === getItem('user').username;
+    const isOwner = getItem('user') && blogDetails().username === getItem('user').username;
     if (!isOwner) return [];
     return m('.blog-actions', [
       button('edit-blog', editBlog, 'Edit'),
