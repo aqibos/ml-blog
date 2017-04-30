@@ -9,9 +9,9 @@ const devHost = 'ml-blog-dev.herokuapp.com';
 
 const isHost = host => window.location.host === host;
 
-const apiUrl = isHost(liveHost) ? liveApi
-             : isHost(devHost)  ? devApi
-                                : localApi;
+const apiUrl = isHost(liveHost) ? liveApi : devApi;
+            //  : isHost(devHost)  ? devApi
+                                // : localApi;
 
 const api = makeApi(apiUrl);
 

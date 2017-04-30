@@ -17,7 +17,7 @@ Demo applications are hosted on Heroku.
 
 ## Local Installation (_ml-blog_)
 
-_Please note: **Node.js** and **npm** are required to run this project. **Running the project locally requires the ml-blog-api** project to also be running locally._
+_Please note: **Node.js** and **npm** are required to run this project. **The ml-blog-api project requires certain enviroment variables to set, therefore the local ml-blog project has been configured to run against the development API. This can be changed in the `app/js/api/api.js` file (line 12).**._
 
 1. Download the project, either via the [browser](https://github.com/ashah023/ml-blog) or using the command line, using `git clone https://github.com/ashah023/ml-blog.git`.
 2. Install dependencies using `npm install` in the directory the project was downloaded in.
@@ -38,11 +38,11 @@ _Please note: **Node.js** and **npm** are required to run this project._
 4. The server is now is running at `http://localhost:1338`.
 
 ## Development Installation (_ml-blog_)
-1. Follow steps 1 and 2 for [Local Installation](## Local Installation (_ml-blog_))
+1. Follow steps 1 and 2 for Local Installation (_ml-blog_)
 2. Run `gulp watch`.
 
 ## Development Installation (_ml-blog-api_)
-1. Follow steps 1 and 2 for [Local Installation](## Local Installation (_ml-blog-api_))
+1. Follow steps 1 and 2 for Local Installation (_ml-blog-api_)
 2. Run `npm run dev`.
 3. The server is now is running at `http://localhost:1338`.
 
@@ -55,7 +55,9 @@ The application was built from scratch using a three-tier architecture:
 
 ### Presentation Layer
 
-The presentation layer is single-page application built using a standard MVC design pattern with **[MithrilJS](https://mithril.js.org/)**. MithrilJS allows for vanilla javascript syntax and supports a wide variety of browsers. Mithril also allows for re-usable components, similar to other frameworks. All styling is done using **Sass** that is pre-processed into CSS. Tachyons
+The presentation layer is single-page application built using a standard MVC design pattern with **[MithrilJS](https://mithril.js.org/)**. MithrilJS allows for vanilla javascript syntax and supports a wide variety of browsers. Mithril also allows for re-usable components, similar to other frameworks.
+
+All styling is done using **Sass** that is pre-processed into CSS. The [Tachyons](http://tachyons.io/) framework in conjuction with Sass inheritance was used to style the application. Tachyons simply provides shortcuts for common CSS styling. For example instead of writing `border: 1px solid black;`, you can simply write `.ba;`, which stands for "border all". Also, instead of polluting the HTML with all of the styling, the Tachyon shortcuts are simply extended in the relevant stylesheet. The styling is also ready for mobile devices.
 
 Live data loading is avaiable via [Pusher](https://pusher.com/). If an person is viewing a blog and a new comment is made, the comment will automatically be displayed.
 
@@ -106,4 +108,8 @@ The `src/` directory contains all of the core logic:
 With more time, I would have liked to do the following:
 
 * Implement tests on both the presentation layer with PhantomJS and backend layer with MochaJS and ChaiJS.
+* Add rich text support
+* Add image support
+* Add notifications (via email) for new comments
+* Add a newsletter subscription
 * Adding administrative roles
