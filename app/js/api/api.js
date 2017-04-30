@@ -1,11 +1,15 @@
 import makeApi from './makeApi';
 
-const liveApi = 'https://ml-blog-api.herokuapp.com';
-const devApi = 'https://ml-blog-api-dev.herokuapp.com';
+// const liveApi = 'https://ml-blog-api.herokuapp.com';
+// const devApi = 'https://ml-blog-api-dev.herokuapp.com';
+const liveApi = 'https://ml-blog-api.aqibshah.com';
+const devApi = 'https://ml-blog-api-dev.aqibshah.com';
 const localApi = 'http://localhost:1338';
 
-const liveHost = 'ml-blog.herokuapp.com';
-const devHost = 'ml-blog-dev.herokuapp.com';
+// const liveHost = 'ml-blog.herokuapp.com';
+// const devHost = 'ml-blog-dev.herokuapp.com';
+const liveHost = 'ml-blog.aqibshah.com';
+const devHost = 'ml-blog-dev.aqibshah.com';
 
 const isHost = host => window.location.host === host;
 
