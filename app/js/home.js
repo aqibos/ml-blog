@@ -76,7 +76,6 @@ export default function Home({ api }) {
   };
 
   const view = () => {
-    console.log('view', start(), blogCount());
     return m('.home', [
       m(nav),
       isLoadingBlogs() ? LoadingView() : pageView()

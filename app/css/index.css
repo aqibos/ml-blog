@@ -2221,7 +2221,7 @@ img {
 .mb4 {
   margin-bottom: 2rem; }
 
-.mb5, body {
+.mb5, body .home, .blog, .new-blog {
   margin-bottom: 4rem; }
 
 .mb6 {

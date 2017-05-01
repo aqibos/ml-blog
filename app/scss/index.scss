@@ -2,7 +2,9 @@
 $blue-color: #2266AA;
 $yellow-color: #EEA221;
 
-body { @extend .mb5; }
+body .home, .blog, .new-blog {
+  @extend .mb5;
+}
 
 .title-font {
   font-family: 'Montserrat', 'Helvetica', 'Arial', 'sans-serif';
