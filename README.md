@@ -84,6 +84,8 @@ The logic layer is also written in a Node.js enviroment, specifically with **[Ko
 
 The database is a Postgres relational database. All queries/schemas are written using a SQL/Schema builder, by the name of [Knex.JS](http://knexjs.org/). Knex.js allows SQL language-independent queries and schemas to be written in javascript. Knex.js supports Postgres, MSSQL, MySQL, MariaDB, SQLite3, and Oracle, so switching database should be easier.
 
+Passwords are encrypted via [bcrypt](https://www.npmjs.com/package/bcryptjs).
+
 The logic layer is further abstracted into 3 layers:
 * **API Layer** - The API endpoints are created and exposed in this layer. The API layer parses the requests and communicates with the service layer to send back a response.
 * **Service Layer** - All of the business logic is contained in this layer (e.g., trigger a new comment via pusher, ownership authentication, parameter validations, etc). The service layer communicates with the repository layer to perform CRUD operations as needed.
@@ -118,6 +120,10 @@ With more time, I would have liked to do the following:
 * Add administrative roles
 * Add more robust error handling
 * Encapsulate domain types (e.g., Blog, Comment) in classes and use them inside both projects.
+
+## Contact
+
+For any questions, please contact the developer at `ashah023@fiu.edu`. Thank you.oth projects.
 
 ## Contact
 

@@ -4,6 +4,7 @@ import button from './components/button';
 import inputBox from './components/inputBox';
 import link from './components/link';
 import { setItem } from './util/session_storage';
+import { omit } from 'ramda';
 
 export default function Login({ api }) {
 
@@ -22,7 +23,7 @@ export default function Login({ api }) {
 
       isLoginLoading(false);
       m.route.set('/home');
-      setItem('user', res.data);
+      setItem('user', omit(['password'], res.data));
     })
     .catch(err => {
       apiError(err); isLoginLoading(false); m.redraw();
