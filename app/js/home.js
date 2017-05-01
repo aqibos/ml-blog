@@ -1,6 +1,6 @@
 import m from 'mithril';
 import stream from 'mithril/stream';
-import BlogPreview from './components/blog-preview';
+import BlogPreview from './components/blog_preview';
 import LoadingView from './components/loading_view';
 import Nav from './components/nav';
 import button from './components/button';

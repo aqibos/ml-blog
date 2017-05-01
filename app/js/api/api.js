@@ -1,4 +1,4 @@
-import makeApi from './makeApi';
+import makeApi from './make_api';
 
 const liveApi = 'https://ml-blog-api.herokuapp.com';
 const devApi = 'https://ml-blog-api-dev.herokuapp.com';

@@ -1,7 +1,7 @@
 import m from 'mithril';
 import stream from 'mithril/stream';
 import button from './button';
-import textArea from './textArea';
+import textArea from './text_area';
 import { getItem } from '../util/session_storage';
 import { dateWithTime } from '../util/format';
 

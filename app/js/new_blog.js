@@ -1,8 +1,8 @@
 import m from 'mithril';
 import stream from 'mithril/stream';
 import Nav from './components/nav';
-import inputBox from './components/inputBox';
-import textArea from './components/textArea';
+import inputBox from './components/input_box';
+import textArea from './components/text_area';
 import button from './components/button';
 import LoadingView from './components/loading_view';
 import { getItem } from './util/session_storage';

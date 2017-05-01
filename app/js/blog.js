@@ -3,7 +3,7 @@ import stream from 'mithril/stream';
 import Comment from './components/comment';
 import Nav from './components/nav';
 import LoadingView from './components/loading_view';
-import textArea from './components/textArea';
+import textArea from './components/text_area';
 import button from './components/button';
 import { curry } from 'ramda';
 import { getItem } from './util/session_storage';

@@ -21,7 +21,6 @@ m.route(document.querySelector('#app'), '/', {
   '/login': Login({ api }),
   '/register': Register({ api }),
   '/home': { view: () => m(home) },
-  // '/home/:st': { view: () => m(home) },
   '/blogs': Blog({ api, pusher }),
   '/new-blog': NewBlog({ api })
 });

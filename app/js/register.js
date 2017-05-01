@@ -1,7 +1,7 @@
 import m from 'mithril';
 import stream from 'mithril/stream';
 import button from './components/button';
-import inputBox from './components/inputBox';
+import inputBox from './components/input_box';
 import link from './components/link';
 import { setItem } from './util/session_storage';
 
