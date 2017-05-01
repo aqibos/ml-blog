@@ -82,8 +82,6 @@ The `js/` directory contains all of the core logic:
 
 The logic layer is also written in a Node.js enviroment, specifically with **[Koa.js](http://koajs.com/#)**. Koa was developed by the creators of Express.js. Applications written with Koa can use the newer `async/await` syntax as opposed to traditional callbacks. Koa also uses extensive middleware (e.g., user authentication) for each request allowing for less code duplication. The application is a written using a dependency injection container, called **[awilix](https://github.com/jeffijoe/awilix)**. All dependencies are resolved, loaded, and injected in `src/lib/configureContainer.js` file. The application uses this container, as observed in `src/lib/createServer.js` file. Again, using dependency injections allows for easily swappable container, which allows for more robust testing.
 
-The database is a Postgres relational database. All queries/schemas are written using a SQL/Schema builder, by the name of [Knex.JS](http://knexjs.org/). Knex.js allows SQL language-independent queries and schemas to be written in javascript. Knex.js supports Postgres, MSSQL, MySQL, MariaDB, SQLite3, and Oracle, so switching database should be easier.
-
 Passwords are encrypted via [bcrypt](https://www.npmjs.com/package/bcryptjs).
 
 The logic layer is further abstracted into 3 layers:
@@ -108,6 +106,28 @@ The `src/` directory contains all of the core logic:
 * `src/middleware` - Contains all middleware to be used.
 * `src/utilities` - Contains all utility files
 
+#### API Endpoints
+
+* POST /users
+* POST /login
+* DELETE /logout
+* GET /blogs
+* POST /blogs
+* PUT /blogs
+* DELETE /blogs
+* GET /comments
+* POST /comments
+* PUT /comments
+* DELETE /comments
+
+### Data Layer
+
+The database is a Postgres relational database. All queries/schemas are written using a query/schema builder, by the name of [Knex.JS](http://knexjs.org/). Knex.js allows SQL language-independent queries and schemas to be written in javascript. Knex.js supports Postgres, MSSQL, MySQL, MariaDB, SQLite3, and Oracle, so switching between database technologies should be easier.
+
+#### Code
+
+Database scripts are located in the ml-blog-api project, under the `database/` directory.
+
 ## Enhancements
 
 With more time, I would have liked to do the following:
@@ -120,10 +140,6 @@ With more time, I would have liked to do the following:
 * Add administrative roles
 * Add more robust error handling
 * Encapsulate domain types (e.g., Blog, Comment) in classes and use them inside both projects.
-
-## Contact
-
-For any questions, please contact the developer at `ashah023@fiu.edu`. Thank you.oth projects.
 
 ## Contact
 
