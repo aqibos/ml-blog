@@ -8,7 +8,7 @@ Relevant projects are publicly available in Github:
 
 # Live Demo
 
-**Demos require cookies to be accepted from third-party sites, since the API and the application are hosted on different URLs!**
+**Application requires cookies to be accepted from third-party sites, since the API and the application are hosted on different URLs! Otherwise, you may get a 'You must be logged in' error.**
 
 Demo applications are hosted on Heroku.
 
@@ -23,7 +23,7 @@ _Please note: **Node.js** and **npm** are required to run this project. **The ml
 
 1. Download the project, either via the [browser](https://github.com/ashah023/ml-blog) or using the command line, using `git clone https://github.com/ashah023/ml-blog.git`.
 2. Install dependencies using `npm install` in the directory the project was downloaded in.
-3. Run `gulp build`
+3. The `postinstall` script should automatically build the project for you. To build manually, run `gulp build`. You may need to run `npm install -g gulp` first.
 4. Run `npm start`.
 5. Navigate to `http://localhost:5000/#!/`.
 
@@ -36,7 +36,7 @@ _Please note: **Node.js** and **npm** are required to run this project._
 
 1. Download the project, either via the [browser](https://github.com/ashah023/ml-blog-api) or using using the comamnd line, using `git clone https://github.com/ashah023/ml-blog-api.git`.
 2. Install dependencies using `npm install` in the directory the project was downloaded in.
-3. Run `npm run build`.
+3. The `postinstall` script should automatically build the project for you. To build manually, run `npm run build`.
 4. Run `npm start`.
 5. The server is now is running at `http://localhost:1338`.
 
