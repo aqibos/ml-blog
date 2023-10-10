@@ -6,17 +6,6 @@ Relevant projects are publicly available in Github:
 * **ml-blog**: https://github.com/ashah023/ml-blog.git
 * **ml-blog-api**: https://github.com/ashah023/ml-blog-api.git
 
-# Live Demo
-
-**Application requires cookies to be accepted from third-party sites, since the API and the application are hosted on different URLs! Otherwise, you may get a 'You must be logged in' error.**
-
-Demo applications are hosted on Heroku.
-
-* [Production Frontend](https://ml-blog.herokuapp.com/)
-* [Production Backend](https://ml-blog-api.herokuapp.com/)
-* [Development Frontend](https://ml-blog-dev.herokuapp.com/)
-* [Development Backend](https://ml-blog-api-dev.herokuapp.com/)
-
 ## Local Installation (_ml-blog_)
 
 _Please note: **Node.js** and **npm** are required to run this project. **The ml-blog-api project requires certain enviroment variables to set, therefore the local ml-blog project has been configured to run against the development API. This can be changed in the `app/js/api/api.js` file (line 12).**_
